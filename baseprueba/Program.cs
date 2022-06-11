@@ -37,7 +37,7 @@ namespace baseprueba
             var alumnop = new alumno()
             {
                 fecha_de_nacimiento = "1111-11-11",
-                nombre_alumno = "nombre prueba alumno",
+                nombre_alumno = "alfonso",
                 rut_alumno = "22222222-2"
             };
             apoderadodb.InsertOne(uwuwp);
