@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modelos\anotacion.cs" />
     <Compile Include="modelos\apoderado.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -139,8 +140,14 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="modelos\alumno.cs" />
+    <Compile Include="modelos\asistencia.cs" />
+    <Compile Include="modelos\conection.cs" />
+    <Compile Include="modelos\notas.cs" />
+    <Compile Include="modelos\profesor.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="obj\Debug\baseprueba.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -156,6 +163,13 @@
     <None Include="Core\Compression\Zstandard\lib\osx\libzstd.dylib" />
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
+    <None Include="obj\Debug\baseprueba.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\baseprueba.csproj.CopyComplete" />
+    <None Include="obj\Debug\baseprueba.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\baseprueba.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\baseprueba.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -175,6 +189,12 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
+    <Content Include="obj\Debug\baseprueba.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\baseprueba.exe" />
+    <Content Include="obj\Debug\baseprueba.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.5.2\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.5.2\build\MongoDB.Libmongocrypt.targets')" />
