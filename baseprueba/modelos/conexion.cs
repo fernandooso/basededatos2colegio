@@ -19,9 +19,5 @@ namespace baseprueba.modelos
             var database = client.GetDatabase("TallerBD2");
         }
     }
-<<<<<<< HEAD
-    
-=======
-    ///mala tu wea 2.0
->>>>>>> 0e82b1a60b9858e2d79e912801b86f1615c70a54
+
 }

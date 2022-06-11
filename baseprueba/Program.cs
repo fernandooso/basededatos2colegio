@@ -20,7 +20,7 @@ namespace baseprueba
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             Console.WriteLine("hola");
-            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
+           /* var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
             var database = client.GetDatabase("TallerBD2");
@@ -43,11 +43,11 @@ namespace baseprueba
             apoderadodb.InsertOne(uwuwp);
             Console.WriteLine("ewew");
 
-            agregarsub(database,alumnop);
+            agregarsub(database,alumnop);*/
 
         }
 
-        private static void agregarsub(IMongoDatabase database, alumno alumnop)
+       /* private static void agregarsub(IMongoDatabase database, alumno alumnop)
         {
             BsonDocument documentillo = alumnop.ToBsonDocument();
             BsonDocument newSubdocument = documentillo;
@@ -64,6 +64,6 @@ namespace baseprueba
                 }
             }
             Console.WriteLine("fallos");
-        }
+        }*/
     }
 }
