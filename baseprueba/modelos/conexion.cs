@@ -9,4 +9,5 @@ namespace baseprueba.modelos
     internal class conexion
     {
     }
+    ///mala tu wea 2.0
 }
