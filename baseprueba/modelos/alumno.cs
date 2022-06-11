@@ -12,4 +12,5 @@ namespace baseprueba.modelos
         public string nombre_alumno { set; get; }
         public string fecha_de_nacimiento { get; set; }
     }
+    //mala tu wea
 }
