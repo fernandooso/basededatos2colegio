@@ -46,12 +46,11 @@ namespace baseprueba
 
         private static void agregarsub(IMongoDatabase database, alumno alumnop)
         {
-            String al=alumnop.ToString();
-            BsonDocument newSubdocument = BsonDocument.Parse(al);
-           // BsonDocument newSubdocument = BsonDocument(al);
-            newSubdocument.Remove("Id");
+            BsonDocument documentillo = alumnop.ToBsonDocument();
+            BsonDocument newSubdocument = documentillo;
+           //  newSubdocument.Remove("Id");
             var collection = database.GetCollection<BsonDocument>("apoderado");
-            var filter = Builders<BsonDocument>.Filter.Eq("rut", ObjectId.Parse("11111111-1"));
+            var filter = Builders<BsonDocument>.Filter.Eq("rut","11111111-1");
             var update = Builders<BsonDocument>.Update.Push("a_cargo", newSubdocument);
             var result = collection.UpdateOne(filter, update);
             if (result.IsModifiedCountAvailable)
