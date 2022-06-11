@@ -141,10 +141,9 @@
     </Compile>
     <Compile Include="modelos\alumno.cs" />
     <Compile Include="modelos\asistencia.cs" />
-    <Compile Include="modelos\conexion.cs" />
+    <Compile Include="modelos\conection.cs" />
     <Compile Include="modelos\notas.cs" />
     <Compile Include="modelos\profesor.cs" />
-    <Compile Include="modelos\uwu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
