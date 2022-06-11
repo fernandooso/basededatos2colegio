@@ -20,7 +20,7 @@ namespace baseprueba
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var database = client.GetDatabase("baseprueba");
+            var database = client.GetDatabase("TallerBD2");
             Console.WriteLine("hola");
             var apoderadodb = database.GetCollection<apoderado>("apoderado");
             Console.WriteLine("hola");
