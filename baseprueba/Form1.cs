@@ -1,4 +1,6 @@
-﻿using System;
+﻿using baseprueba.modelos;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,6 +77,12 @@ namespace baseprueba
             panel_anotacion.Visible = true;
         }
 
-        
+        private void button8_Click(object sender, EventArgs e)
+        {
+            conection unaconexon = new conection();
+            IMongoDatabase database = unaconexon.conexion_Mongo();
+            unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, textBox_Materia_panelnotas.Text, textBox_Nota.Text);
+            
+        }
     }
 }
