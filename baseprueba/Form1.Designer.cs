@@ -38,7 +38,7 @@
             this.textBox_anotacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox_nomal_anotacion = new System.Windows.Forms.TextBox();
+            this.textBox_nom_al_anotacion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.boton_ingresaanotacion = new System.Windows.Forms.Button();
             this.button_volver_anotacion = new System.Windows.Forms.Button();
@@ -56,9 +56,9 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_Login = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_contraseña_login = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Usuario_login = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,7 @@
             this.textBox_nombrealumasistencia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.boton_ingresarasistencia = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_Volver_asistencia = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
@@ -102,11 +102,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel_opciones_profesor);
+            this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Controls.Add(this.panel_nota);
             this.panel3.Controls.Add(this.panel_Login);
-            this.panel3.Controls.Add(this.panel_opciones_profesor);
-            this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -123,7 +123,7 @@
             this.panel_anotacion.Controls.Add(this.textBox_anotacion);
             this.panel_anotacion.Controls.Add(this.label7);
             this.panel_anotacion.Controls.Add(this.label8);
-            this.panel_anotacion.Controls.Add(this.textBox_nomal_anotacion);
+            this.panel_anotacion.Controls.Add(this.textBox_nom_al_anotacion);
             this.panel_anotacion.Controls.Add(this.label9);
             this.panel_anotacion.Controls.Add(this.boton_ingresaanotacion);
             this.panel_anotacion.Controls.Add(this.button_volver_anotacion);
@@ -200,12 +200,12 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Ingrese la Anotacion";
             // 
-            // textBox_nomal_anotacion
+            // textBox_nom_al_anotacion
             // 
-            this.textBox_nomal_anotacion.Location = new System.Drawing.Point(297, 85);
-            this.textBox_nomal_anotacion.Name = "textBox_nomal_anotacion";
-            this.textBox_nomal_anotacion.Size = new System.Drawing.Size(222, 20);
-            this.textBox_nomal_anotacion.TabIndex = 13;
+            this.textBox_nom_al_anotacion.Location = new System.Drawing.Point(297, 85);
+            this.textBox_nom_al_anotacion.Name = "textBox_nom_al_anotacion";
+            this.textBox_nom_al_anotacion.Size = new System.Drawing.Size(222, 20);
+            this.textBox_nom_al_anotacion.TabIndex = 13;
             // 
             // label9
             // 
@@ -362,9 +362,9 @@
             // 
             // panel_Login
             // 
-            this.panel_Login.Controls.Add(this.textBox2);
+            this.panel_Login.Controls.Add(this.textBox_contraseña_login);
             this.panel_Login.Controls.Add(this.button1);
-            this.panel_Login.Controls.Add(this.textBox1);
+            this.panel_Login.Controls.Add(this.textBox_Usuario_login);
             this.panel_Login.Controls.Add(this.label2);
             this.panel_Login.Controls.Add(this.label1);
             this.panel_Login.Controls.Add(this.pictureBox4);
@@ -374,13 +374,13 @@
             this.panel_Login.Size = new System.Drawing.Size(814, 702);
             this.panel_Login.TabIndex = 10;
             // 
-            // textBox2
+            // textBox_contraseña_login
             // 
-            this.textBox2.Location = new System.Drawing.Point(271, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBox_contraseña_login.Location = new System.Drawing.Point(271, 230);
+            this.textBox_contraseña_login.Name = "textBox_contraseña_login";
+            this.textBox_contraseña_login.PasswordChar = '*';
+            this.textBox_contraseña_login.Size = new System.Drawing.Size(208, 20);
+            this.textBox_contraseña_login.TabIndex = 4;
             // 
             // button1
             // 
@@ -392,12 +392,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // textBox1
+            // textBox_Usuario_login
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox_Usuario_login.Location = new System.Drawing.Point(271, 119);
+            this.textBox_Usuario_login.Name = "textBox_Usuario_login";
+            this.textBox_Usuario_login.Size = new System.Drawing.Size(208, 20);
+            this.textBox_Usuario_login.TabIndex = 2;
             // 
             // label2
             // 
@@ -530,7 +530,7 @@
             this.panel_Asistencia.Controls.Add(this.textBox_nombrealumasistencia);
             this.panel_Asistencia.Controls.Add(this.label14);
             this.panel_Asistencia.Controls.Add(this.boton_ingresarasistencia);
-            this.panel_Asistencia.Controls.Add(this.button4);
+            this.panel_Asistencia.Controls.Add(this.button_Volver_asistencia);
             this.panel_Asistencia.Controls.Add(this.pictureBox9);
             this.panel_Asistencia.Controls.Add(this.pictureBox10);
             this.panel_Asistencia.Location = new System.Drawing.Point(0, 0);
@@ -597,14 +597,15 @@
             this.boton_ingresarasistencia.UseVisualStyleBackColor = true;
             this.boton_ingresarasistencia.Click += new System.EventHandler(this.boton_ingresarasistencia_Click);
             // 
-            // button4
+            // button_Volver_asistencia
             // 
-            this.button4.Location = new System.Drawing.Point(40, 611);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(170, 48);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Volver";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_Volver_asistencia.Location = new System.Drawing.Point(40, 611);
+            this.button_Volver_asistencia.Name = "button_Volver_asistencia";
+            this.button_Volver_asistencia.Size = new System.Drawing.Size(170, 48);
+            this.button_Volver_asistencia.TabIndex = 7;
+            this.button_Volver_asistencia.Text = "Volver";
+            this.button_Volver_asistencia.UseVisualStyleBackColor = true;
+            this.button_Volver_asistencia.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // pictureBox9
             // 
@@ -662,9 +663,9 @@
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel_Login;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_contraseña_login;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Usuario_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -695,7 +696,7 @@
         private System.Windows.Forms.TextBox textBox_anotacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox_nomal_anotacion;
+        private System.Windows.Forms.TextBox textBox_nom_al_anotacion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button boton_ingresaanotacion;
         private System.Windows.Forms.Button button_volver_anotacion;
@@ -709,7 +710,7 @@
         private System.Windows.Forms.TextBox textBox_nombrealumasistencia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button boton_ingresarasistencia;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_Volver_asistencia;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label13;

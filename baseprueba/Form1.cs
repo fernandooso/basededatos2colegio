@@ -31,6 +31,9 @@ namespace baseprueba
 
         private void button2_Click(object sender, EventArgs e)
         {
+            textBox_contraseña_login.Text = "";
+            textBox_Usuario_login.Text = "";
+            
             panel_Login.Visible = true;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
@@ -58,6 +61,13 @@ namespace baseprueba
 
         private void button7_Click(object sender, EventArgs e)
         {
+
+            textBox_nom_al_anotacion.Text = "";
+            textBox_anotacion.Text = "";
+            textBox_tipoanotacion.Text = "";
+            textBox_fechaanotacion.Text = "";
+            textBox_materianotacion.Text = "";
+            
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
@@ -69,7 +79,8 @@ namespace baseprueba
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
-            panel_anotacion.Visible = true;
+            panel_anotacion.Visible = false;
+            panel_Asistencia.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -119,7 +130,7 @@ namespace baseprueba
 
         private void boton_ingresaanotacion_Click(object sender, EventArgs e)
         {
-            if (textBox_nomal_anotacion.Text.Equals("") || textBox_anotacion.Text.Equals("")
+            if (textBox_nom_al_anotacion.Text.Equals("") || textBox_anotacion.Text.Equals("")
                 || textBox_fechaanotacion.Text.Equals("") || textBox_materianotacion.Text.Equals("") || textBox_tipoanotacion.Text.Equals(""))
             {
                 MessageBox.Show("Por favor rellene todos los campos");
@@ -128,11 +139,11 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                unaconexon.agrega_anotacion(database, textBox_nomal_anotacion.Text, textBox_anotacion.Text,
+                unaconexon.agrega_anotacion(database, textBox_nom_al_anotacion.Text, textBox_anotacion.Text,
                     textBox_tipoanotacion.Text,textBox_materianotacion.Text, textBox_fechaanotacion.Text);
 
                 textBox_anotacion.Text = "";
-                textBox_nomal_anotacion.Text = "";
+                textBox_nom_al_anotacion.Text = "";
                 textBox_fechaanotacion.Text = "";
                 textBox_tipoanotacion.Text = "";
                 textBox_materianotacion.Text = "";
@@ -140,6 +151,16 @@ namespace baseprueba
             }
         }
 
- 
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            textBox_nombrealumasistencia.Text = "";
+            textBox_fechaasistencia.Text = "";
+            textBoxasistencia.Text = "";
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_opciones_profesor.Visible = true;
+        }
     }
 }
