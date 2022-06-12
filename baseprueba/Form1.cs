@@ -21,58 +21,60 @@ namespace baseprueba
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = true;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            panel_que_hacer.Visible = false;
+            panel_Login.Visible = true;
+            panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = false;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
             panel_nota.Visible = true;
             panel_anotacion.Visible = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = true;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = true;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = false;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel_que_hacer.Visible = false;
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = true;
         }
+
+        
     }
 }
