@@ -121,11 +121,11 @@ namespace baseprueba.modelos
       
             var consultadb = database.GetCollection<anotacion>("anotacion");
             var filter = Builders<anotacion>.Filter.Eq(x => x.nombre_alumno,nombrealumno);
-            var respuesta = consultadb.Find<anotacion>(filter).ToJson;
+           // var respuesta = consultadb.Find<anotacion>(filter).ToJson;
   
             
             
-            Console.WriteLine(respuesta);
+            //Console.WriteLine(respuesta);
         }
 
     }
