@@ -25,7 +25,7 @@ namespace baseprueba
             IMongoDatabase database=unaconexion.conexion_Mongo();
             unaconexion.consulta_anotacion(database,"jandi");
             Console.WriteLine("");
-            unaconexion.consulta_notas(database, "pedrito");
+            unaconexion.consulta_notas(database, "pedrito","lenguaje");
             Console.WriteLine("");
             unaconexion.consulta_asistencia(database, "pepe");
             Console.WriteLine("");

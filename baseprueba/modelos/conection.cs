@@ -115,7 +115,10 @@ namespace baseprueba.modelos
             profesordb.InsertOne(profeingreso);
         }
 
-        public void consulta_anotacion(IMongoDatabase database, String nombrealumno)//ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
+        ////////////////////////7 consultas///////////////////////////////////
+
+        //ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
+        public void consulta_anotacion(IMongoDatabase database, String nombrealumno)
         {
             var consultadb = database.GetCollection<anotacion>("anotacion");
             if(consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno))
@@ -134,8 +137,9 @@ namespace baseprueba.modelos
                 Console.WriteLine("no se encontro");
             }
         }
-
-        public void consulta_notas(IMongoDatabase database, String nombrealumno)//ve si el alumno existe, si es asi devuelve las notas
+        //ve si el alumno existe, si es asi devuelve las notas
+        public void consulta_notas(IMongoDatabase database, String nombrealumno,
+            String materia)
         {
             var consultadb = database.GetCollection<notas>("notas");
             if (consultadb.AsQueryable<notas>().Any(c => c.nombre_alumno == nombrealumno))
@@ -143,9 +147,9 @@ namespace baseprueba.modelos
                 var query = consultadb.AsQueryable<notas>();
                 foreach (var alumno in query)
                 {
-                    if (nombrealumno == alumno.nombre_alumno)
+                    if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
                     {
-                        Console.WriteLine(alumno.nota);
+                        Console.WriteLine(alumno.nota+""+alumno.materia);//se hace lo que se desee
                     }
                 }
             }
@@ -154,9 +158,8 @@ namespace baseprueba.modelos
                 Console.WriteLine("no se encontro");
             }
         }
-
-
-        public void consulta_asistencia(IMongoDatabase database, String nombrealumno)//ve si el alumno existe, si es asi devuelve las asistencia
+        //ve si el alumno existe, si es asi devuelve las asistencia
+        public void consulta_asistencia(IMongoDatabase database, String nombrealumno)
         {
             var consultadb = database.GetCollection<Asistencia>("asistencia");
             if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
@@ -175,8 +178,8 @@ namespace baseprueba.modelos
                 Console.WriteLine("no se encontro");
             }
         }
-
-        public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)//ve si el profeexiste, si es asi devuelve su info
+        //ve si el profeexiste, si es asi devuelve su info
+        public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)
         {
             var consultadb = database.GetCollection<profesor>("profesor");
             if (consultadb.AsQueryable<profesor>().Any(c => c.nombre_completo == nombreprofe))
@@ -197,7 +200,4 @@ namespace baseprueba.modelos
         }
 
     }
-
-    
-
 }
