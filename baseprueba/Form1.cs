@@ -162,5 +162,32 @@ namespace baseprueba
             panel_anotacion.Visible = false;
             panel_opciones_profesor.Visible = true;
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            //aca lo de ver asistencia
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+        }
+
+        private void button_Ver_asistencia_Click(object sender, EventArgs e)
+        {
+            //abre panle asistencia
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = true;
+            panel_opciones_profesor.Visible = false;
+        }
     }
 }
