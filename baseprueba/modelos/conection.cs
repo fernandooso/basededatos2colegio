@@ -115,40 +115,85 @@ namespace baseprueba.modelos
             profesordb.InsertOne(profeingreso);
         }
 
-        public void leer_anotacion(IMongoDatabase database, String nombrealumno)//ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
+        public void consulta_anotacion(IMongoDatabase database, String nombrealumno)//ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
         {
             var consultadb = database.GetCollection<anotacion>("anotacion");
-            var res = consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno);//si esta devueve true else false
-            Console.WriteLine(res);
-            var query = consultadb.AsQueryable<anotacion>();
-            foreach (var anotado in query)
+            if(consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno))
             {
-                if (nombrealumno == anotado.nombre_alumno)
+                var query = consultadb.AsQueryable<anotacion>();
+                foreach (var anotado in query)
                 {
-                    Console.WriteLine(anotado.comentario + " " + anotado.tipo);
+                    if (nombrealumno == anotado.nombre_alumno)
+                    {
+                        Console.WriteLine(anotado.comentario + " " + anotado.tipo);
+                    }
                 }
             }
-            Console.WriteLine("uwuwuwuwuwu");
-           
-
+            else
+            {
+                Console.WriteLine("no se encontro");
+            }
         }
 
-        public void leer_apn(IMongoDatabase database, String nombrealumno)
+        public void consulta_notas(IMongoDatabase database, String nombrealumno)//ve si el alumno existe, si es asi devuelve las notas
         {
-           var consultadb = database.GetCollection<apoderado>("apoderado");
-           /* var res = consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno);//si esta devueve true else false
-            Console.WriteLine(res);*/
-            var query = consultadb.AsQueryable<apoderado>();
-            foreach (var anotado in query)
+            var consultadb = database.GetCollection<notas>("notas");
+            if (consultadb.AsQueryable<notas>().Any(c => c.nombre_alumno == nombrealumno))
             {
-                Console.WriteLine(anotado);
+                var query = consultadb.AsQueryable<notas>();
+                foreach (var alumno in query)
+                {
+                    if (nombrealumno == alumno.nombre_alumno)
+                    {
+                        Console.WriteLine(alumno.nota);
+                    }
+                }
             }
-            /* var filter = Builders<anotacion>.Filter.Eq(x => x.nombre_alumno, nombrealumno);
-             var respuesta= consultadb.Find(filter).ToJson();
-             Console.WriteLine(respuesta);*/
-            Console.WriteLine("uwuwuwuwuwu");
+            else
+            {
+                Console.WriteLine("no se encontro");
+            }
+        }
 
 
+        public void consulta_asistencia(IMongoDatabase database, String nombrealumno)//ve si el alumno existe, si es asi devuelve las asistencia
+        {
+            var consultadb = database.GetCollection<Asistencia>("asistencia");
+            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
+            {
+                var query = consultadb.AsQueryable<Asistencia>();
+                foreach (var alumno in query)
+                {
+                    if (nombrealumno == alumno.nombre_alumno)
+                    {
+                        Console.WriteLine(alumno.asistencia);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("no se encontro");
+            }
+        }
+
+        public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)//ve si el profeexiste, si es asi devuelve su info
+        {
+            var consultadb = database.GetCollection<profesor>("profesor");
+            if (consultadb.AsQueryable<profesor>().Any(c => c.nombre_completo == nombreprofe))
+            {
+                var query = consultadb.AsQueryable<profesor>();
+                foreach (var profe in query)
+                {
+                    if (nombreprofe == profe.nombre_completo)
+                    {
+                        Console.WriteLine(profe.especialidad);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("no se encontro");
+            }
         }
 
     }
