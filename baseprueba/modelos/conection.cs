@@ -115,17 +115,40 @@ namespace baseprueba.modelos
             profesordb.InsertOne(profeingreso);
         }
 
-        public void leer_anotacion(IMongoDatabase database, String nombrealumno
-           )
+        public void leer_anotacion(IMongoDatabase database, String nombrealumno)//ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
         {
-      
             var consultadb = database.GetCollection<anotacion>("anotacion");
-            var filter = Builders<anotacion>.Filter.Eq(x => x.nombre_alumno,nombrealumno);
-           // var respuesta = consultadb.Find<anotacion>(filter).ToJson;
-  
-            
-            
-            //Console.WriteLine(respuesta);
+            var res = consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno);//si esta devueve true else false
+            Console.WriteLine(res);
+            var query = consultadb.AsQueryable<anotacion>();
+            foreach (var anotado in query)
+            {
+                if (nombrealumno == anotado.nombre_alumno)
+                {
+                    Console.WriteLine(anotado.comentario + " " + anotado.tipo);
+                }
+            }
+            Console.WriteLine("uwuwuwuwuwu");
+           
+
+        }
+
+        public void leer_apn(IMongoDatabase database, String nombrealumno)
+        {
+           var consultadb = database.GetCollection<apoderado>("apoderado");
+           /* var res = consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno);//si esta devueve true else false
+            Console.WriteLine(res);*/
+            var query = consultadb.AsQueryable<apoderado>();
+            foreach (var anotado in query)
+            {
+                Console.WriteLine(anotado);
+            }
+            /* var filter = Builders<anotacion>.Filter.Eq(x => x.nombre_alumno, nombrealumno);
+             var respuesta= consultadb.Find(filter).ToJson();
+             Console.WriteLine(respuesta);*/
+            Console.WriteLine("uwuwuwuwuwu");
+
+
         }
 
     }
