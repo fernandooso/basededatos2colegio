@@ -138,25 +138,27 @@ namespace baseprueba.modelos
             }
         }
         //ve si el alumno existe, si es asi devuelve las notas
-        public void consulta_notas(IMongoDatabase database, String nombrealumno,
+        public String[] consulta_notas(IMongoDatabase database, String nombrealumno,
             String materia)
         {
+            String[] valores = new String[20];
+            int contador = 0;
             var consultadb = database.GetCollection<notas>("notas");
-            if (consultadb.AsQueryable<notas>().Any(c => c.nombre_alumno == nombrealumno))
-            {
+            
+            
                 var query = consultadb.AsQueryable<notas>();
                 foreach (var alumno in query)
                 {
                     if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
                     {
-                        Console.WriteLine(alumno.nota+""+alumno.materia);//se hace lo que se desee
+                    valores[contador] = alumno.nota + "" + alumno.materia;    
+                    Console.WriteLine(alumno.nota+""+alumno.materia);//se hace lo que se desee
+                    contador++;
                     }
                 }
-            }
-            else
-            {
+            
                 Console.WriteLine("no se encontro");
-            }
+            return valores;
         }
         //ve si el alumno existe, si es asi devuelve las asistencia
         public double consulta_asistencia(IMongoDatabase database, String nombrealumno)
@@ -242,6 +244,19 @@ namespace baseprueba.modelos
                 return false;
             }
             
+        }
+        public bool existenciaNotas(IMongoDatabase database, String nombreabuscar)
+        {
+            var consultadb = database.GetCollection<notas>("notas");
+            if (consultadb.AsQueryable<notas>().Any(c => c.nombre_alumno == nombreabuscar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

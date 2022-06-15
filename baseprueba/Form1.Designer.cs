@@ -29,6 +29,26 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_opciones_profesor = new System.Windows.Forms.Panel();
+            this.panelverNotas = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxResultadoVN = new System.Windows.Forms.TextBox();
+            this.textBoxIngresoNombreVN = new System.Windows.Forms.TextBox();
+            this.labelNombreVN = new System.Windows.Forms.Label();
+            this.btVerNotas = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button_Ver_asistencia = new System.Windows.Forms.Button();
+            this.button_ver_anotaciones = new System.Windows.Forms.Button();
+            this.button_ver_notas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_pone_notas = new System.Windows.Forms.Button();
+            this.button_pone_anotaciones = new System.Windows.Forms.Button();
+            this.button_pone_asistencia = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel_Ver_asistencia = new System.Windows.Forms.Panel();
             this.Cargar_nombre_Alumno = new System.Windows.Forms.Label();
             this.textBox_Asitencia_Ver_asistencia = new System.Windows.Forms.TextBox();
@@ -83,18 +103,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel_opciones_profesor = new System.Windows.Forms.Panel();
-            this.button_Ver_asistencia = new System.Windows.Forms.Button();
-            this.button_ver_anotaciones = new System.Windows.Forms.Button();
-            this.button_ver_notas = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button_pone_notas = new System.Windows.Forms.Button();
-            this.button_pone_anotaciones = new System.Windows.Forms.Button();
-            this.button_pone_asistencia = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ingresoMateriaVN = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            this.panel_opciones_profesor.SuspendLayout();
+            this.panelverNotas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_Ver_asistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -110,24 +127,228 @@
             this.panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel_opciones_profesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panelverNotas);
+            this.panel3.Controls.Add(this.panel_opciones_profesor);
             this.panel3.Controls.Add(this.panel_Ver_asistencia);
             this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Controls.Add(this.panel_nota);
             this.panel3.Controls.Add(this.panel_Login);
-            this.panel3.Controls.Add(this.panel_opciones_profesor);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(815, 698);
+            this.panel3.Size = new System.Drawing.Size(1632, 699);
             this.panel3.TabIndex = 10;
+            // 
+            // panel_opciones_profesor
+            // 
+            this.panel_opciones_profesor.Controls.Add(this.pictureBox2);
+            this.panel_opciones_profesor.Controls.Add(this.button_Ver_asistencia);
+            this.panel_opciones_profesor.Controls.Add(this.button_ver_anotaciones);
+            this.panel_opciones_profesor.Controls.Add(this.button_ver_notas);
+            this.panel_opciones_profesor.Controls.Add(this.label3);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_notas);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_anotaciones);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_asistencia);
+            this.panel_opciones_profesor.Controls.Add(this.button2);
+            this.panel_opciones_profesor.Controls.Add(this.pictureBox3);
+            this.panel_opciones_profesor.Location = new System.Drawing.Point(0, 0);
+            this.panel_opciones_profesor.Name = "panel_opciones_profesor";
+            this.panel_opciones_profesor.Size = new System.Drawing.Size(811, 700);
+            this.panel_opciones_profesor.TabIndex = 9;
+            this.panel_opciones_profesor.Visible = false;
+            // 
+            // panelverNotas
+            // 
+            this.panelverNotas.Controls.Add(this.label16);
+            this.panelverNotas.Controls.Add(this.ingresoMateriaVN);
+            this.panelverNotas.Controls.Add(this.label15);
+            this.panelverNotas.Controls.Add(this.textBoxResultadoVN);
+            this.panelverNotas.Controls.Add(this.textBoxIngresoNombreVN);
+            this.panelverNotas.Controls.Add(this.labelNombreVN);
+            this.panelverNotas.Controls.Add(this.btVerNotas);
+            this.panelverNotas.Controls.Add(this.button5);
+            this.panelverNotas.Controls.Add(this.pictureBox13);
+            this.panelverNotas.Controls.Add(this.pictureBox14);
+            this.panelverNotas.Location = new System.Drawing.Point(820, 3);
+            this.panelverNotas.Name = "panelverNotas";
+            this.panelverNotas.Size = new System.Drawing.Size(811, 700);
+            this.panelverNotas.TabIndex = 15;
+            this.panelverNotas.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(266, 37);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "label16";
+            // 
+            // textBoxResultadoVN
+            // 
+            this.textBoxResultadoVN.Location = new System.Drawing.Point(194, 165);
+            this.textBoxResultadoVN.Multiline = true;
+            this.textBoxResultadoVN.Name = "textBoxResultadoVN";
+            this.textBoxResultadoVN.ReadOnly = true;
+            this.textBoxResultadoVN.Size = new System.Drawing.Size(252, 204);
+            this.textBoxResultadoVN.TabIndex = 17;
+            // 
+            // textBoxIngresoNombreVN
+            // 
+            this.textBoxIngresoNombreVN.Location = new System.Drawing.Point(224, 85);
+            this.textBoxIngresoNombreVN.Name = "textBoxIngresoNombreVN";
+            this.textBoxIngresoNombreVN.Size = new System.Drawing.Size(222, 20);
+            this.textBoxIngresoNombreVN.TabIndex = 13;
+            // 
+            // labelNombreVN
+            // 
+            this.labelNombreVN.AutoSize = true;
+            this.labelNombreVN.Location = new System.Drawing.Point(70, 85);
+            this.labelNombreVN.Name = "labelNombreVN";
+            this.labelNombreVN.Size = new System.Drawing.Size(148, 13);
+            this.labelNombreVN.TabIndex = 11;
+            this.labelNombreVN.Text = "Ingrese el Nombre del Alumno";
+            // 
+            // btVerNotas
+            // 
+            this.btVerNotas.Location = new System.Drawing.Point(297, 611);
+            this.btVerNotas.Name = "btVerNotas";
+            this.btVerNotas.Size = new System.Drawing.Size(170, 48);
+            this.btVerNotas.TabIndex = 8;
+            this.btVerNotas.Text = "Ver notas";
+            this.btVerNotas.UseVisualStyleBackColor = true;
+            this.btVerNotas.Click += new System.EventHandler(this.btVerNotas_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(40, 611);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(170, 48);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Volver";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::baseprueba.Properties.Resources.azul;
+            this.pictureBox13.Location = new System.Drawing.Point(3, -3);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(61, 700);
+            this.pictureBox13.TabIndex = 12;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::baseprueba.Properties.Resources.azul;
+            this.pictureBox14.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(350, 700);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox14.TabIndex = 6;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::baseprueba.Properties.Resources.azul;
+            this.pictureBox2.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(350, 700);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button_Ver_asistencia
+            // 
+            this.button_Ver_asistencia.Location = new System.Drawing.Point(296, 468);
+            this.button_Ver_asistencia.Name = "button_Ver_asistencia";
+            this.button_Ver_asistencia.Size = new System.Drawing.Size(170, 48);
+            this.button_Ver_asistencia.TabIndex = 14;
+            this.button_Ver_asistencia.Text = "Ver asistencia";
+            this.button_Ver_asistencia.UseVisualStyleBackColor = true;
+            this.button_Ver_asistencia.Click += new System.EventHandler(this.button_Ver_asistencia_Click);
+            // 
+            // button_ver_anotaciones
+            // 
+            this.button_ver_anotaciones.Location = new System.Drawing.Point(297, 399);
+            this.button_ver_anotaciones.Name = "button_ver_anotaciones";
+            this.button_ver_anotaciones.Size = new System.Drawing.Size(170, 48);
+            this.button_ver_anotaciones.TabIndex = 13;
+            this.button_ver_anotaciones.Text = "Ver anotaciones";
+            this.button_ver_anotaciones.UseVisualStyleBackColor = true;
+            // 
+            // button_ver_notas
+            // 
+            this.button_ver_notas.Location = new System.Drawing.Point(296, 332);
+            this.button_ver_notas.Name = "button_ver_notas";
+            this.button_ver_notas.Size = new System.Drawing.Size(170, 48);
+            this.button_ver_notas.TabIndex = 12;
+            this.button_ver_notas.Text = "Ver notas";
+            this.button_ver_notas.UseVisualStyleBackColor = true;
+            this.button_ver_notas.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(317, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Que desea Hacer";
+            // 
+            // button_pone_notas
+            // 
+            this.button_pone_notas.Location = new System.Drawing.Point(296, 138);
+            this.button_pone_notas.Name = "button_pone_notas";
+            this.button_pone_notas.Size = new System.Drawing.Size(170, 48);
+            this.button_pone_notas.TabIndex = 10;
+            this.button_pone_notas.Text = "Poner notas";
+            this.button_pone_notas.UseVisualStyleBackColor = true;
+            this.button_pone_notas.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button_pone_anotaciones
+            // 
+            this.button_pone_anotaciones.Location = new System.Drawing.Point(297, 200);
+            this.button_pone_anotaciones.Name = "button_pone_anotaciones";
+            this.button_pone_anotaciones.Size = new System.Drawing.Size(170, 48);
+            this.button_pone_anotaciones.TabIndex = 9;
+            this.button_pone_anotaciones.Text = "Poner anotaciones";
+            this.button_pone_anotaciones.UseVisualStyleBackColor = true;
+            this.button_pone_anotaciones.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button_pone_asistencia
+            // 
+            this.button_pone_asistencia.Location = new System.Drawing.Point(296, 265);
+            this.button_pone_asistencia.Name = "button_pone_asistencia";
+            this.button_pone_asistencia.Size = new System.Drawing.Size(170, 48);
+            this.button_pone_asistencia.TabIndex = 8;
+            this.button_pone_asistencia.Text = "Poner asistencia";
+            this.button_pone_asistencia.UseVisualStyleBackColor = true;
+            this.button_pone_asistencia.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(40, 611);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(170, 48);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Volver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::baseprueba.Properties.Resources.colegio;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(290, 700);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // panel_Ver_asistencia
             // 
@@ -647,131 +868,39 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // panel_opciones_profesor
+            // ingresoMateriaVN
             // 
-            this.panel_opciones_profesor.Controls.Add(this.button_Ver_asistencia);
-            this.panel_opciones_profesor.Controls.Add(this.button_ver_anotaciones);
-            this.panel_opciones_profesor.Controls.Add(this.button_ver_notas);
-            this.panel_opciones_profesor.Controls.Add(this.label3);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_notas);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_anotaciones);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_asistencia);
-            this.panel_opciones_profesor.Controls.Add(this.button2);
-            this.panel_opciones_profesor.Controls.Add(this.pictureBox3);
-            this.panel_opciones_profesor.Controls.Add(this.pictureBox2);
-            this.panel_opciones_profesor.Location = new System.Drawing.Point(0, 0);
-            this.panel_opciones_profesor.Name = "panel_opciones_profesor";
-            this.panel_opciones_profesor.Size = new System.Drawing.Size(811, 700);
-            this.panel_opciones_profesor.TabIndex = 9;
-            this.panel_opciones_profesor.Visible = false;
+            this.ingresoMateriaVN.Location = new System.Drawing.Point(224, 116);
+            this.ingresoMateriaVN.Name = "ingresoMateriaVN";
+            this.ingresoMateriaVN.Size = new System.Drawing.Size(222, 20);
+            this.ingresoMateriaVN.TabIndex = 21;
             // 
-            // button_Ver_asistencia
+            // label16
             // 
-            this.button_Ver_asistencia.Location = new System.Drawing.Point(296, 468);
-            this.button_Ver_asistencia.Name = "button_Ver_asistencia";
-            this.button_Ver_asistencia.Size = new System.Drawing.Size(170, 48);
-            this.button_Ver_asistencia.TabIndex = 14;
-            this.button_Ver_asistencia.Text = "Ver asistencia";
-            this.button_Ver_asistencia.UseVisualStyleBackColor = true;
-            this.button_Ver_asistencia.Click += new System.EventHandler(this.button_Ver_asistencia_Click);
-            // 
-            // button_ver_anotaciones
-            // 
-            this.button_ver_anotaciones.Location = new System.Drawing.Point(297, 399);
-            this.button_ver_anotaciones.Name = "button_ver_anotaciones";
-            this.button_ver_anotaciones.Size = new System.Drawing.Size(170, 48);
-            this.button_ver_anotaciones.TabIndex = 13;
-            this.button_ver_anotaciones.Text = "Ver anotaciones";
-            this.button_ver_anotaciones.UseVisualStyleBackColor = true;
-            // 
-            // button_ver_notas
-            // 
-            this.button_ver_notas.Location = new System.Drawing.Point(296, 332);
-            this.button_ver_notas.Name = "button_ver_notas";
-            this.button_ver_notas.Size = new System.Drawing.Size(170, 48);
-            this.button_ver_notas.TabIndex = 12;
-            this.button_ver_notas.Text = "Ver notas";
-            this.button_ver_notas.UseVisualStyleBackColor = true;
-            this.button_ver_notas.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(317, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Que desea Hacer";
-            // 
-            // button_pone_notas
-            // 
-            this.button_pone_notas.Location = new System.Drawing.Point(296, 138);
-            this.button_pone_notas.Name = "button_pone_notas";
-            this.button_pone_notas.Size = new System.Drawing.Size(170, 48);
-            this.button_pone_notas.TabIndex = 10;
-            this.button_pone_notas.Text = "Poner notas";
-            this.button_pone_notas.UseVisualStyleBackColor = true;
-            this.button_pone_notas.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button_pone_anotaciones
-            // 
-            this.button_pone_anotaciones.Location = new System.Drawing.Point(297, 200);
-            this.button_pone_anotaciones.Name = "button_pone_anotaciones";
-            this.button_pone_anotaciones.Size = new System.Drawing.Size(170, 48);
-            this.button_pone_anotaciones.TabIndex = 9;
-            this.button_pone_anotaciones.Text = "Poner anotaciones";
-            this.button_pone_anotaciones.UseVisualStyleBackColor = true;
-            this.button_pone_anotaciones.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button_pone_asistencia
-            // 
-            this.button_pone_asistencia.Location = new System.Drawing.Point(296, 265);
-            this.button_pone_asistencia.Name = "button_pone_asistencia";
-            this.button_pone_asistencia.Size = new System.Drawing.Size(170, 48);
-            this.button_pone_asistencia.TabIndex = 8;
-            this.button_pone_asistencia.Text = "Poner asistencia";
-            this.button_pone_asistencia.UseVisualStyleBackColor = true;
-            this.button_pone_asistencia.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(40, 611);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 48);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Volver";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::baseprueba.Properties.Resources.colegio;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(290, 700);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox2.Location = new System.Drawing.Point(472, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(350, 700);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(70, 123);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(154, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Ingrese el nombre de la materia";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 698);
+            this.ClientSize = new System.Drawing.Size(1632, 699);
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
+            this.panel_opciones_profesor.ResumeLayout(false);
+            this.panel_opciones_profesor.PerformLayout();
+            this.panelverNotas.ResumeLayout(false);
+            this.panelverNotas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_Ver_asistencia.ResumeLayout(false);
             this.panel_Ver_asistencia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -792,10 +921,6 @@
             this.panel_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel_opciones_profesor.ResumeLayout(false);
-            this.panel_opciones_profesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -868,6 +993,17 @@
         private System.Windows.Forms.Button button_Ver_asistencia;
         private System.Windows.Forms.Button button_ver_anotaciones;
         private System.Windows.Forms.Label Cargar_nombre_Alumno;
+        private System.Windows.Forms.Panel panelverNotas;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxResultadoVN;
+        private System.Windows.Forms.TextBox textBoxIngresoNombreVN;
+        private System.Windows.Forms.Label labelNombreVN;
+        private System.Windows.Forms.Button btVerNotas;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox ingresoMateriaVN;
     }
 }
 

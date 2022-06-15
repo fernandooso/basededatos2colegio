@@ -19,7 +19,7 @@ namespace baseprueba
             InitializeComponent();
         }
 
-       
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace baseprueba
         {
             textBox_contraseña_login.Text = "";
             textBox_Usuario_login.Text = "";
-            
+
             panel_Login.Visible = true;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
@@ -67,7 +67,7 @@ namespace baseprueba
             textBox_tipoanotacion.Text = "";
             textBox_fechaanotacion.Text = "";
             textBox_materianotacion.Text = "";
-            
+
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
@@ -140,7 +140,7 @@ namespace baseprueba
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
                 unaconexon.agrega_anotacion(database, textBox_nom_al_anotacion.Text, textBox_anotacion.Text,
-                    textBox_tipoanotacion.Text,textBox_materianotacion.Text, textBox_fechaanotacion.Text);
+                    textBox_tipoanotacion.Text, textBox_materianotacion.Text, textBox_fechaanotacion.Text);
 
                 textBox_anotacion.Text = "";
                 textBox_nom_al_anotacion.Text = "";
@@ -165,7 +165,12 @@ namespace baseprueba
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panelverNotas.Visible = true;
+            panel_opciones_profesor.Visible = false;
         }
 
         private void button4_Click_2(object sender, EventArgs e)
@@ -194,16 +199,16 @@ namespace baseprueba
         {
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
-            if(unaconexion.existencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
+            if (unaconexion.existencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
             {
-               double diasasistido= unaconexion.consulta_asistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
+                double diasasistido = unaconexion.consulta_asistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
 
                 //double diastotales = Convert.ToDouble(textBox_porcentaje_Ver_Asistencia.Text);
                 double diastotales = unaconexion.consulta_asistencia_total(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
-               textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
-               
-               Double calculo=(diasasistido/diastotales)*100;
-               textBox_Asitencia_Ver_asistencia.Text ="dias transcurridos: "+diastotales+"\n"+"dias asistidos: "+diasasistido+"\n"+"porcentaje de asistencia= "+ Math.Round(calculo, 2) + "%";
+                textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
+
+                Double calculo = (diasasistido / diastotales) * 100;
+                textBox_Asitencia_Ver_asistencia.Text = "dias transcurridos: " + diastotales + "\n" + "dias asistidos: " + diasasistido + "\n" + "porcentaje de asistencia= " + Math.Round(calculo, 2) + "%";
 
             }
             else
@@ -211,10 +216,31 @@ namespace baseprueba
                 MessageBox.Show("no existe el alumno en los registros ctm");
                 textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
             }
-            
-           
+
+
         }
 
-       
+        private void btVerNotas_Click(object sender, EventArgs e)
+        {
+            conection unaConexion = new conection();
+            IMongoDatabase database = unaConexion.conexion_Mongo();
+            if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)){
+                String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
+                int contador = 0;
+                String cadena = "";
+                while (valores[contador] != null)  
+                {
+                    cadena = cadena + valores[contador]+"\n";
+                }
+                textBoxResultadoVN.Text = cadena;
+            }
+            else
+            {
+                MessageBox.Show("no existe el alumno en los registros ctm");
+                textBoxIngresoNombreVN.Text = "";
+                ingresoMateriaVN.Text = "";
+            }
+            
+        }
     }
 }
