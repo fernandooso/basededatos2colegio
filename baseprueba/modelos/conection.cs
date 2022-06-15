@@ -141,23 +141,31 @@ namespace baseprueba.modelos
         public String[] consulta_notas(IMongoDatabase database, String nombrealumno,
             String materia)
         {
-            String[] valores = new String[20];
             int contador = 0;
+            String espacio = " ";
             var consultadb = database.GetCollection<notas>("notas");
             
             
-                var query = consultadb.AsQueryable<notas>();
-                foreach (var alumno in query)
+            var query = consultadb.AsQueryable<notas>();
+            foreach (var alumno in query)
+            {
+                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                {
+                    contador++;
+                }
+            }
+
+            String[] valores = new String[contador];
+            int i = 0;
+            foreach (var alumno in query)
                 {
                     if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
                     {
-                    valores[contador] = alumno.nota + "" + alumno.materia;    
-                    Console.WriteLine(alumno.nota+""+alumno.materia);//se hace lo que se desee
-                    contador++;
+                    valores[i] = alumno.nota + espacio + alumno.materia;    
+                   // Console.WriteLine(alumno.nota+espacio+alumno.materia);//se hace lo que se desee
+                    i++;
                     }
                 }
-            
-                Console.WriteLine("no se encontro");
             return valores;
         }
         //ve si el alumno existe, si es asi devuelve las asistencia

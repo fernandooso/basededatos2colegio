@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel_opciones_profesor = new System.Windows.Forms.Panel();
             this.panelverNotas = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ingresoMateriaVN = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxResultadoVN = new System.Windows.Forms.TextBox();
             this.textBoxIngresoNombreVN = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.panel_opciones_profesor = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button_Ver_asistencia = new System.Windows.Forms.Button();
             this.button_ver_anotaciones = new System.Windows.Forms.Button();
@@ -103,13 +105,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ingresoMateriaVN = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
-            this.panel_opciones_profesor.SuspendLayout();
             this.panelverNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.panel_opciones_profesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_Ver_asistencia.SuspendLayout();
@@ -141,26 +141,8 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1632, 699);
+            this.panel3.Size = new System.Drawing.Size(1370, 699);
             this.panel3.TabIndex = 10;
-            // 
-            // panel_opciones_profesor
-            // 
-            this.panel_opciones_profesor.Controls.Add(this.pictureBox2);
-            this.panel_opciones_profesor.Controls.Add(this.button_Ver_asistencia);
-            this.panel_opciones_profesor.Controls.Add(this.button_ver_anotaciones);
-            this.panel_opciones_profesor.Controls.Add(this.button_ver_notas);
-            this.panel_opciones_profesor.Controls.Add(this.label3);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_notas);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_anotaciones);
-            this.panel_opciones_profesor.Controls.Add(this.button_pone_asistencia);
-            this.panel_opciones_profesor.Controls.Add(this.button2);
-            this.panel_opciones_profesor.Controls.Add(this.pictureBox3);
-            this.panel_opciones_profesor.Location = new System.Drawing.Point(0, 0);
-            this.panel_opciones_profesor.Name = "panel_opciones_profesor";
-            this.panel_opciones_profesor.Size = new System.Drawing.Size(811, 700);
-            this.panel_opciones_profesor.TabIndex = 9;
-            this.panel_opciones_profesor.Visible = false;
             // 
             // panelverNotas
             // 
@@ -179,6 +161,22 @@
             this.panelverNotas.Size = new System.Drawing.Size(811, 700);
             this.panelverNotas.TabIndex = 15;
             this.panelverNotas.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(70, 123);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(154, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Ingrese el nombre de la materia";
+            // 
+            // ingresoMateriaVN
+            // 
+            this.ingresoMateriaVN.Location = new System.Drawing.Point(224, 116);
+            this.ingresoMateriaVN.Name = "ingresoMateriaVN";
+            this.ingresoMateriaVN.Size = new System.Drawing.Size(222, 20);
+            this.ingresoMateriaVN.TabIndex = 21;
             // 
             // label15
             // 
@@ -251,6 +249,24 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox14.TabIndex = 6;
             this.pictureBox14.TabStop = false;
+            // 
+            // panel_opciones_profesor
+            // 
+            this.panel_opciones_profesor.Controls.Add(this.pictureBox2);
+            this.panel_opciones_profesor.Controls.Add(this.button_Ver_asistencia);
+            this.panel_opciones_profesor.Controls.Add(this.button_ver_anotaciones);
+            this.panel_opciones_profesor.Controls.Add(this.button_ver_notas);
+            this.panel_opciones_profesor.Controls.Add(this.label3);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_notas);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_anotaciones);
+            this.panel_opciones_profesor.Controls.Add(this.button_pone_asistencia);
+            this.panel_opciones_profesor.Controls.Add(this.button2);
+            this.panel_opciones_profesor.Controls.Add(this.pictureBox3);
+            this.panel_opciones_profesor.Location = new System.Drawing.Point(0, 0);
+            this.panel_opciones_profesor.Name = "panel_opciones_profesor";
+            this.panel_opciones_profesor.Size = new System.Drawing.Size(811, 700);
+            this.panel_opciones_profesor.TabIndex = 9;
+            this.panel_opciones_profesor.Visible = false;
             // 
             // pictureBox2
             // 
@@ -868,37 +884,21 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // ingresoMateriaVN
-            // 
-            this.ingresoMateriaVN.Location = new System.Drawing.Point(224, 116);
-            this.ingresoMateriaVN.Name = "ingresoMateriaVN";
-            this.ingresoMateriaVN.Size = new System.Drawing.Size(222, 20);
-            this.ingresoMateriaVN.TabIndex = 21;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(70, 123);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(154, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Ingrese el nombre de la materia";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1632, 699);
+            this.ClientSize = new System.Drawing.Size(1370, 699);
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
-            this.panel_opciones_profesor.ResumeLayout(false);
-            this.panel_opciones_profesor.PerformLayout();
             this.panelverNotas.ResumeLayout(false);
             this.panelverNotas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.panel_opciones_profesor.ResumeLayout(false);
+            this.panel_opciones_profesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_Ver_asistencia.ResumeLayout(false);

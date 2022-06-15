@@ -226,13 +226,15 @@ namespace baseprueba
             IMongoDatabase database = unaConexion.conexion_Mongo();
             if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)){
                 String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
-                int contador = 0;
-                String cadena = "";
-                while (valores[contador] != null)  
+
+
+                foreach (var item in valores)
                 {
-                    cadena = cadena + valores[contador]+"\n";
+                    textBoxResultadoVN.Text = item;
                 }
-                textBoxResultadoVN.Text = cadena;
+
+             
+                
             }
             else
             {
