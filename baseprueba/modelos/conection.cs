@@ -159,8 +159,34 @@ namespace baseprueba.modelos
             }
         }
         //ve si el alumno existe, si es asi devuelve las asistencia
-        public void consulta_asistencia(IMongoDatabase database, String nombrealumno)
+        public double consulta_asistencia(IMongoDatabase database, String nombrealumno)
         {
+            double i = 0;
+            var consultadb = database.GetCollection<Asistencia>("asistencia");
+            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
+            {
+                var query = consultadb.AsQueryable<Asistencia>();
+                foreach (var alumno in query)
+                {
+                    if (nombrealumno == alumno.nombre_alumno && alumno.asistencia=="si")
+                    {
+                       
+                       Console.WriteLine(alumno.asistencia);
+                        i++;
+                       
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("no se encontro");
+            }
+            return i;
+        }
+
+        public double consulta_asistencia_total(IMongoDatabase database, String nombrealumno)
+        {
+            double i = 0;
             var consultadb = database.GetCollection<Asistencia>("asistencia");
             if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
             {
@@ -169,7 +195,10 @@ namespace baseprueba.modelos
                 {
                     if (nombrealumno == alumno.nombre_alumno)
                     {
+
                         Console.WriteLine(alumno.asistencia);
+                        i++;
+
                     }
                 }
             }
@@ -177,6 +206,7 @@ namespace baseprueba.modelos
             {
                 Console.WriteLine("no se encontro");
             }
+            return i;
         }
         //ve si el profeexiste, si es asi devuelve su info
         public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)
@@ -199,5 +229,19 @@ namespace baseprueba.modelos
             }
         }
 
+        /////////////////////verificar existencia
+        public bool existencia(IMongoDatabase database, String nombreabuscar)
+        {
+            var consultadb = database.GetCollection<Asistencia>("asistencia");
+            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombreabuscar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
     }
 }

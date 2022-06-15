@@ -20,7 +20,7 @@ namespace baseprueba
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            conection unaconexion = new conection();
+           /* conection unaconexion = new conection();
 
             IMongoDatabase database=unaconexion.conexion_Mongo();
             unaconexion.consulta_anotacion(database,"jandi");
@@ -29,7 +29,7 @@ namespace baseprueba
             Console.WriteLine("");
             unaconexion.consulta_asistencia(database, "pepe");
             Console.WriteLine("");
-            unaconexion.consulta_datosprofe(database, "profesr");
+            unaconexion.consulta_datosprofe(database, "profesr");*/
             
         }
         

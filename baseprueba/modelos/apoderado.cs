@@ -22,6 +22,8 @@ namespace baseprueba.conexion
         public string direccion { get; set; }
         [BsonElement("fecha_de_nacimiento")]
         public string fecha_nacimiento { get; set; }
+
+       
         
     }
 }

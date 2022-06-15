@@ -189,5 +189,32 @@ namespace baseprueba
             panel_Ver_asistencia.Visible = true;
             panel_opciones_profesor.Visible = false;
         }
+
+        private void button_verasistencia_Click(object sender, EventArgs e)
+        {
+            conection unaconexion = new conection();
+            IMongoDatabase database = unaconexion.conexion_Mongo();
+            if(unaconexion.existencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
+            {
+               double diasasistido= unaconexion.consulta_asistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
+
+                //double diastotales = Convert.ToDouble(textBox_porcentaje_Ver_Asistencia.Text);
+                double diastotales = unaconexion.consulta_asistencia_total(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
+               textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
+               
+               Double calculo=(diasasistido/diastotales)*100;
+               textBox_Asitencia_Ver_asistencia.Text ="dias transcurridos: "+diastotales+"\n"+"dias asistidos: "+diasasistido+"\n"+"porcentaje de asistencia= "+ Math.Round(calculo, 2) + "%";
+
+            }
+            else
+            {
+                MessageBox.Show("no existe el alumno en los registros ctm");
+                textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
+            }
+            
+           
+        }
+
+       
     }
 }

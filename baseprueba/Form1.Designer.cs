@@ -30,8 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel_Ver_asistencia = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_porcentaje_Ver_Asistencia = new System.Windows.Forms.TextBox();
+            this.Cargar_nombre_Alumno = new System.Windows.Forms.Label();
             this.textBox_Asitencia_Ver_asistencia = new System.Windows.Forms.TextBox();
             this.textBox_Nombre_Alumno_Ver_Asistencia = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -95,7 +94,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Cargar_nombre_Alumno = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel_Ver_asistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -134,8 +132,6 @@
             // panel_Ver_asistencia
             // 
             this.panel_Ver_asistencia.Controls.Add(this.Cargar_nombre_Alumno);
-            this.panel_Ver_asistencia.Controls.Add(this.label15);
-            this.panel_Ver_asistencia.Controls.Add(this.textBox_porcentaje_Ver_Asistencia);
             this.panel_Ver_asistencia.Controls.Add(this.textBox_Asitencia_Ver_asistencia);
             this.panel_Ver_asistencia.Controls.Add(this.textBox_Nombre_Alumno_Ver_Asistencia);
             this.panel_Ver_asistencia.Controls.Add(this.label17);
@@ -149,27 +145,21 @@
             this.panel_Ver_asistencia.TabIndex = 14;
             this.panel_Ver_asistencia.Visible = false;
             // 
-            // label15
+            // Cargar_nombre_Alumno
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(94, 124);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(124, 13);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Porcentaje de Asistencia";
-            // 
-            // textBox_porcentaje_Ver_Asistencia
-            // 
-            this.textBox_porcentaje_Ver_Asistencia.Location = new System.Drawing.Point(224, 124);
-            this.textBox_porcentaje_Ver_Asistencia.Name = "textBox_porcentaje_Ver_Asistencia";
-            this.textBox_porcentaje_Ver_Asistencia.Size = new System.Drawing.Size(151, 20);
-            this.textBox_porcentaje_Ver_Asistencia.TabIndex = 18;
+            this.Cargar_nombre_Alumno.AutoSize = true;
+            this.Cargar_nombre_Alumno.Location = new System.Drawing.Point(266, 37);
+            this.Cargar_nombre_Alumno.Name = "Cargar_nombre_Alumno";
+            this.Cargar_nombre_Alumno.Size = new System.Drawing.Size(41, 13);
+            this.Cargar_nombre_Alumno.TabIndex = 20;
+            this.Cargar_nombre_Alumno.Text = "label16";
             // 
             // textBox_Asitencia_Ver_asistencia
             // 
             this.textBox_Asitencia_Ver_asistencia.Location = new System.Drawing.Point(194, 165);
             this.textBox_Asitencia_Ver_asistencia.Multiline = true;
             this.textBox_Asitencia_Ver_asistencia.Name = "textBox_Asitencia_Ver_asistencia";
+            this.textBox_Asitencia_Ver_asistencia.ReadOnly = true;
             this.textBox_Asitencia_Ver_asistencia.Size = new System.Drawing.Size(252, 204);
             this.textBox_Asitencia_Ver_asistencia.TabIndex = 17;
             // 
@@ -197,6 +187,7 @@
             this.button_verasistencia.TabIndex = 8;
             this.button_verasistencia.Text = "Ver Asistencia";
             this.button_verasistencia.UseVisualStyleBackColor = true;
+            this.button_verasistencia.Click += new System.EventHandler(this.button_verasistencia_Click);
             // 
             // button4
             // 
@@ -772,15 +763,6 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // Cargar_nombre_Alumno
-            // 
-            this.Cargar_nombre_Alumno.AutoSize = true;
-            this.Cargar_nombre_Alumno.Location = new System.Drawing.Point(266, 37);
-            this.Cargar_nombre_Alumno.Name = "Cargar_nombre_Alumno";
-            this.Cargar_nombre_Alumno.Size = new System.Drawing.Size(41, 13);
-            this.Cargar_nombre_Alumno.TabIndex = 20;
-            this.Cargar_nombre_Alumno.Text = "label16";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,8 +858,6 @@
         private System.Windows.Forms.TextBox textBox_materianotacion;
         private System.Windows.Forms.Button button_ver_notas;
         private System.Windows.Forms.Panel panel_Ver_asistencia;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox_porcentaje_Ver_Asistencia;
         private System.Windows.Forms.TextBox textBox_Asitencia_Ver_asistencia;
         private System.Windows.Forms.TextBox textBox_Nombre_Alumno_Ver_Asistencia;
         private System.Windows.Forms.Label label17;
