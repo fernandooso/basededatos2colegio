@@ -230,7 +230,9 @@ namespace baseprueba
 
                 foreach (var item in valores)
                 {
-                    textBoxResultadoVN.Text = item;
+                    textBoxResultadoVN.Text= textBoxResultadoVN.Text+item+ "\r\n";
+
+
                 }
 
              
