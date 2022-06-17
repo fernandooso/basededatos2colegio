@@ -137,6 +137,9 @@ namespace baseprueba
         private void button4_Click_2(object sender, EventArgs e)
         {
             //aca lo de ver asistencia
+            textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
+            textBox_Asitencia_Ver_asistencia.Text = "";
+            textBox_porcentaje_asistencia.Text = "";
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
@@ -177,6 +180,8 @@ namespace baseprueba
             panel_Ver_asistencia.Visible = false;
             panel_opciones_profesor.Visible = true;
             panel_ver_anotaciones.Visible = false;
+            textBox_nombrealumno_ver_anotaciones.Text = "";
+            textBox_resultados_anotaciones.Text = "";
         }
         private void button5_volver_vernotas_Click(object sender, EventArgs e)
         {
