@@ -29,21 +29,9 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel_nota = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox_Nota = new System.Windows.Forms.TextBox();
-            this.textBox_Materia_panelnotas = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_Nombre_Alumno_notas = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.boton_ingresarnotas = new System.Windows.Forms.Button();
-            this.button_volver_nota = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_Login = new System.Windows.Forms.Panel();
             this.textBox_contraseña_login = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttoningresaralmenu = new System.Windows.Forms.Button();
             this.textBox_Usuario_login = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -138,7 +126,6 @@
             this.button_volver_anotacion = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-<<<<<<< Updated upstream
             this.panel_nota = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox_Nota = new System.Windows.Forms.TextBox();
@@ -151,22 +138,7 @@
             this.button_volver_nota = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel_Login = new System.Windows.Forms.Panel();
-            this.textBox_contraseña_login = new System.Windows.Forms.TextBox();
-            this.buttoningresaralmenu = new System.Windows.Forms.Button();
-            this.textBox_Usuario_login = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox_primedio = new System.Windows.Forms.TextBox();
-=======
->>>>>>> Stashed changes
             this.panel3.SuspendLayout();
-            this.panel_nota.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -194,152 +166,31 @@
             this.panel_anotacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel_nota.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
-<<<<<<< Updated upstream
             this.panel3.Controls.Add(this.panel_Login);
             this.panel3.Controls.Add(this.panelverNotas);
             this.panel3.Controls.Add(this.panel_ver_anotaciones);
-=======
->>>>>>> Stashed changes
             this.panel3.Controls.Add(this.panel_opciones_profesor);
             this.panel3.Controls.Add(this.panel_Ver_asistencia);
             this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Controls.Add(this.panel_nota);
-<<<<<<< Updated upstream
-=======
-            this.panel3.Controls.Add(this.panel_Login);
-            this.panel3.Controls.Add(this.panelverNotas);
-            this.panel3.Controls.Add(this.panel_ver_anotaciones);
->>>>>>> Stashed changes
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(817, 699);
+            this.panel3.Size = new System.Drawing.Size(813, 699);
             this.panel3.TabIndex = 10;
-            // 
-            // panel_nota
-            // 
-            this.panel_nota.Controls.Add(this.label26);
-            this.panel_nota.Controls.Add(this.textBox_Nota);
-            this.panel_nota.Controls.Add(this.textBox_Materia_panelnotas);
-            this.panel_nota.Controls.Add(this.label6);
-            this.panel_nota.Controls.Add(this.label5);
-            this.panel_nota.Controls.Add(this.textBox_Nombre_Alumno_notas);
-            this.panel_nota.Controls.Add(this.label4);
-            this.panel_nota.Controls.Add(this.boton_ingresarnotas);
-            this.panel_nota.Controls.Add(this.button_volver_nota);
-            this.panel_nota.Controls.Add(this.pictureBox5);
-            this.panel_nota.Controls.Add(this.pictureBox6);
-            this.panel_nota.Location = new System.Drawing.Point(0, 0);
-            this.panel_nota.Name = "panel_nota";
-            this.panel_nota.Size = new System.Drawing.Size(811, 700);
-            this.panel_nota.TabIndex = 11;
-            this.panel_nota.Visible = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(298, 23);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(88, 13);
-            this.label26.TabIndex = 18;
-            this.label26.Text = "Ingreso de Notas";
-            // 
-            // textBox_Nota
-            // 
-            this.textBox_Nota.Location = new System.Drawing.Point(297, 192);
-            this.textBox_Nota.Name = "textBox_Nota";
-            this.textBox_Nota.Size = new System.Drawing.Size(222, 20);
-            this.textBox_Nota.TabIndex = 17;
-            // 
-            // textBox_Materia_panelnotas
-            // 
-            this.textBox_Materia_panelnotas.Location = new System.Drawing.Point(297, 135);
-            this.textBox_Materia_panelnotas.Name = "textBox_Materia_panelnotas";
-            this.textBox_Materia_panelnotas.Size = new System.Drawing.Size(222, 20);
-            this.textBox_Materia_panelnotas.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Ingrese la Nota del Alumno";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Ingrese la Materia";
-            // 
-            // textBox_Nombre_Alumno_notas
-            // 
-            this.textBox_Nombre_Alumno_notas.Location = new System.Drawing.Point(297, 85);
-            this.textBox_Nombre_Alumno_notas.Name = "textBox_Nombre_Alumno_notas";
-            this.textBox_Nombre_Alumno_notas.Size = new System.Drawing.Size(222, 20);
-            this.textBox_Nombre_Alumno_notas.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Ingrese el Nombre del Alumno";
-            // 
-            // boton_ingresarnotas
-            // 
-            this.boton_ingresarnotas.Location = new System.Drawing.Point(297, 611);
-            this.boton_ingresarnotas.Name = "boton_ingresarnotas";
-            this.boton_ingresarnotas.Size = new System.Drawing.Size(170, 48);
-            this.boton_ingresarnotas.TabIndex = 8;
-            this.boton_ingresarnotas.Text = "Ingresar Nota";
-            this.boton_ingresarnotas.UseVisualStyleBackColor = true;
-            this.boton_ingresarnotas.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button_volver_nota
-            // 
-            this.button_volver_nota.Location = new System.Drawing.Point(40, 611);
-            this.button_volver_nota.Name = "button_volver_nota";
-            this.button_volver_nota.Size = new System.Drawing.Size(170, 48);
-            this.button_volver_nota.TabIndex = 7;
-            this.button_volver_nota.Text = "Volver";
-            this.button_volver_nota.UseVisualStyleBackColor = true;
-            this.button_volver_nota.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox5.Location = new System.Drawing.Point(3, -3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(61, 700);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox6.Location = new System.Drawing.Point(472, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(350, 700);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
             // 
             // panel_Login
             // 
             this.panel_Login.Controls.Add(this.textBox_contraseña_login);
-            this.panel_Login.Controls.Add(this.button1);
+            this.panel_Login.Controls.Add(this.buttoningresaralmenu);
             this.panel_Login.Controls.Add(this.textBox_Usuario_login);
             this.panel_Login.Controls.Add(this.label2);
             this.panel_Login.Controls.Add(this.label1);
@@ -358,15 +209,15 @@
             this.textBox_contraseña_login.Size = new System.Drawing.Size(208, 20);
             this.textBox_contraseña_login.TabIndex = 4;
             // 
-            // button1
+            // buttoningresaralmenu
             // 
-            this.button1.Location = new System.Drawing.Point(308, 290);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttoningresaralmenu.Location = new System.Drawing.Point(308, 290);
+            this.buttoningresaralmenu.Name = "buttoningresaralmenu";
+            this.buttoningresaralmenu.Size = new System.Drawing.Size(147, 51);
+            this.buttoningresaralmenu.TabIndex = 3;
+            this.buttoningresaralmenu.Text = "Ingresar";
+            this.buttoningresaralmenu.UseVisualStyleBackColor = true;
+            this.buttoningresaralmenu.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox_Usuario_login
             // 
@@ -1288,7 +1139,6 @@
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             // 
-<<<<<<< Updated upstream
             // panel_nota
             // 
             this.panel_nota.Controls.Add(this.label26);
@@ -1404,116 +1254,15 @@
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             // 
-            // panel_Login
-            // 
-            this.panel_Login.Controls.Add(this.textBox_contraseña_login);
-            this.panel_Login.Controls.Add(this.buttoningresaralmenu);
-            this.panel_Login.Controls.Add(this.textBox_Usuario_login);
-            this.panel_Login.Controls.Add(this.label2);
-            this.panel_Login.Controls.Add(this.label1);
-            this.panel_Login.Controls.Add(this.pictureBox4);
-            this.panel_Login.Controls.Add(this.pictureBox1);
-            this.panel_Login.Location = new System.Drawing.Point(0, 0);
-            this.panel_Login.Name = "panel_Login";
-            this.panel_Login.Size = new System.Drawing.Size(814, 702);
-            this.panel_Login.TabIndex = 10;
-            // 
-            // textBox_contraseña_login
-            // 
-            this.textBox_contraseña_login.Location = new System.Drawing.Point(271, 230);
-            this.textBox_contraseña_login.Name = "textBox_contraseña_login";
-            this.textBox_contraseña_login.PasswordChar = '*';
-            this.textBox_contraseña_login.Size = new System.Drawing.Size(208, 20);
-            this.textBox_contraseña_login.TabIndex = 4;
-            // 
-            // buttoningresaralmenu
-            // 
-            this.buttoningresaralmenu.Location = new System.Drawing.Point(308, 290);
-            this.buttoningresaralmenu.Name = "buttoningresaralmenu";
-            this.buttoningresaralmenu.Size = new System.Drawing.Size(147, 51);
-            this.buttoningresaralmenu.TabIndex = 3;
-            this.buttoningresaralmenu.Text = "Ingresar";
-            this.buttoningresaralmenu.UseVisualStyleBackColor = true;
-            this.buttoningresaralmenu.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // textBox_Usuario_login
-            // 
-            this.textBox_Usuario_login.Location = new System.Drawing.Point(271, 119);
-            this.textBox_Usuario_login.Name = "textBox_Usuario_login";
-            this.textBox_Usuario_login.Size = new System.Drawing.Size(208, 20);
-            this.textBox_Usuario_login.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(314, 184);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "    Ingrese contraseña";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(314, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "    Login Profesor\r\n\r\n    Ingrese usuario\r\n";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox4.Location = new System.Drawing.Point(461, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(350, 700);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::baseprueba.Properties.Resources.colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(290, 700);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(70, 306);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(51, 13);
-            this.label27.TabIndex = 23;
-            this.label27.Text = "Promedio";
-            // 
-            // textBox_primedio
-            // 
-            this.textBox_primedio.Location = new System.Drawing.Point(224, 296);
-            this.textBox_primedio.Multiline = true;
-            this.textBox_primedio.Name = "textBox_primedio";
-            this.textBox_primedio.ReadOnly = true;
-            this.textBox_primedio.Size = new System.Drawing.Size(84, 23);
-            this.textBox_primedio.TabIndex = 24;
-            // 
-=======
->>>>>>> Stashed changes
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 699);
+            this.ClientSize = new System.Drawing.Size(813, 699);
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
-            this.panel_nota.ResumeLayout(false);
-            this.panel_nota.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1550,6 +1299,10 @@
             this.panel_anotacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel_nota.ResumeLayout(false);
+            this.panel_nota.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
