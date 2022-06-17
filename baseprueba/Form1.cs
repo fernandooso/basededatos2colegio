@@ -23,11 +23,22 @@ namespace baseprueba
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = true;
-            panel_nota.Visible = false;
-            panel_anotacion.Visible = false;
-            panel_ver_anotaciones.Visible = false;
+            conection unaconexon = new conection();
+            IMongoDatabase database = unaconexon.conexion_Mongo();
+           String contraseña= unaconexon.consulta_contraseña(database, textBox_Usuario_login.Text);
+            if (unaconexon.exitenciaprofesor(database,textBox_Usuario_login.Text)&& contraseña== textBox_contraseña_login.Text)
+            {
+                panel_Login.Visible = false;
+                panel_opciones_profesor.Visible = true;
+                panel_nota.Visible = false;
+                panel_anotacion.Visible = false;
+                panel_ver_anotaciones.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña incorrecto");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

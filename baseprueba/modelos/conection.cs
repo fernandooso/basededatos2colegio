@@ -273,28 +273,6 @@ namespace baseprueba.modelos
         }
 
 
-
-        //ve si el profeexiste, si es asi devuelve su info
-        public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)
-        {
-            var consultadb = database.GetCollection<profesor>("profesor");
-            if (consultadb.AsQueryable<profesor>().Any(c => c.nombre_completo == nombreprofe))
-            {
-                var query = consultadb.AsQueryable<profesor>();
-                foreach (var profe in query)
-                {
-                    if (nombreprofe == profe.nombre_completo)
-                    {
-                        Console.WriteLine(profe.especialidad);
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine("no se encontro");
-            }
-        }
-
         /////////////////////------ funciones que verifican existencia
         public bool existenciaasistencia(IMongoDatabase database, String nombreabuscar)
         {
@@ -334,6 +312,34 @@ namespace baseprueba.modelos
             {
                 return false;
             }
+        }
+        public bool exitenciaprofesor(IMongoDatabase database, String rutbuscar)
+        {
+            var consultadb = database.GetCollection<profesor>("profesor");
+            if (consultadb.AsQueryable<profesor>().Any(c => c.rut == rutbuscar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //d-------------devuelve la contreña del profesor
+        public String consulta_contraseña(IMongoDatabase database, String rutbuscar)
+        {
+            var consultadb = database.GetCollection<profesor>("profesor");
+            String contraseña = "";
+            var query = consultadb.AsQueryable<profesor>();
+            foreach (var profe in query)
+            {
+                if (rutbuscar == profe.rut)
+                {
+                    contraseña = profe.contraseña;
+                }
+            }
+            Console.WriteLine(contraseña);
+            return contraseña;
         }
     }
 }

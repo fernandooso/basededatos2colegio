@@ -130,7 +130,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_Login = new System.Windows.Forms.Panel();
             this.textBox_contraseña_login = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttoningresaralmenu = new System.Windows.Forms.Button();
             this.textBox_Usuario_login = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -173,7 +173,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel_nota);
             this.panel3.Controls.Add(this.panel_Login);
             this.panel3.Controls.Add(this.panelverNotas);
             this.panel3.Controls.Add(this.panel_ver_anotaciones);
@@ -181,6 +180,7 @@
             this.panel3.Controls.Add(this.panel_Ver_asistencia);
             this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
+            this.panel3.Controls.Add(this.panel_nota);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -1162,7 +1162,7 @@
             // panel_Login
             // 
             this.panel_Login.Controls.Add(this.textBox_contraseña_login);
-            this.panel_Login.Controls.Add(this.button1);
+            this.panel_Login.Controls.Add(this.buttoningresaralmenu);
             this.panel_Login.Controls.Add(this.textBox_Usuario_login);
             this.panel_Login.Controls.Add(this.label2);
             this.panel_Login.Controls.Add(this.label1);
@@ -1181,15 +1181,15 @@
             this.textBox_contraseña_login.Size = new System.Drawing.Size(208, 20);
             this.textBox_contraseña_login.TabIndex = 4;
             // 
-            // button1
+            // buttoningresaralmenu
             // 
-            this.button1.Location = new System.Drawing.Point(308, 290);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttoningresaralmenu.Location = new System.Drawing.Point(308, 290);
+            this.buttoningresaralmenu.Name = "buttoningresaralmenu";
+            this.buttoningresaralmenu.Size = new System.Drawing.Size(147, 51);
+            this.buttoningresaralmenu.TabIndex = 3;
+            this.buttoningresaralmenu.Text = "Ingresar";
+            this.buttoningresaralmenu.UseVisualStyleBackColor = true;
+            this.buttoningresaralmenu.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox_Usuario_login
             // 
@@ -1312,7 +1312,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel_Login;
         private System.Windows.Forms.TextBox textBox_contraseña_login;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttoningresaralmenu;
         private System.Windows.Forms.TextBox textBox_Usuario_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
