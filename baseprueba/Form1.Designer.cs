@@ -90,9 +90,9 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.panel_Asistencia = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox_fechaasistencia = new System.Windows.Forms.TextBox();
+            this.textBox_ingreso_fechaasistencia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxasistencia = new System.Windows.Forms.TextBox();
+            this.textBox_ingresoasistencia = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_nombrealumasistencia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -173,14 +173,14 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel_nota);
+            this.panel3.Controls.Add(this.panel_Login);
             this.panel3.Controls.Add(this.panelverNotas);
             this.panel3.Controls.Add(this.panel_ver_anotaciones);
             this.panel3.Controls.Add(this.panel_opciones_profesor);
             this.panel3.Controls.Add(this.panel_Ver_asistencia);
             this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
-            this.panel3.Controls.Add(this.panel_nota);
-            this.panel3.Controls.Add(this.panel_Login);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -780,9 +780,9 @@
             // panel_Asistencia
             // 
             this.panel_Asistencia.Controls.Add(this.label24);
-            this.panel_Asistencia.Controls.Add(this.textBox_fechaasistencia);
+            this.panel_Asistencia.Controls.Add(this.textBox_ingreso_fechaasistencia);
             this.panel_Asistencia.Controls.Add(this.label11);
-            this.panel_Asistencia.Controls.Add(this.textBoxasistencia);
+            this.panel_Asistencia.Controls.Add(this.textBox_ingresoasistencia);
             this.panel_Asistencia.Controls.Add(this.label12);
             this.panel_Asistencia.Controls.Add(this.textBox_nombrealumasistencia);
             this.panel_Asistencia.Controls.Add(this.label14);
@@ -805,12 +805,12 @@
             this.label24.TabIndex = 20;
             this.label24.Text = "Ingreso de Asistencia";
             // 
-            // textBox_fechaasistencia
+            // textBox_ingreso_fechaasistencia
             // 
-            this.textBox_fechaasistencia.Location = new System.Drawing.Point(297, 186);
-            this.textBox_fechaasistencia.Name = "textBox_fechaasistencia";
-            this.textBox_fechaasistencia.Size = new System.Drawing.Size(222, 20);
-            this.textBox_fechaasistencia.TabIndex = 19;
+            this.textBox_ingreso_fechaasistencia.Location = new System.Drawing.Point(297, 186);
+            this.textBox_ingreso_fechaasistencia.Name = "textBox_ingreso_fechaasistencia";
+            this.textBox_ingreso_fechaasistencia.Size = new System.Drawing.Size(222, 20);
+            this.textBox_ingreso_fechaasistencia.TabIndex = 19;
             // 
             // label11
             // 
@@ -821,12 +821,12 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "Ingrese la Fecha";
             // 
-            // textBoxasistencia
+            // textBox_ingresoasistencia
             // 
-            this.textBoxasistencia.Location = new System.Drawing.Point(297, 126);
-            this.textBoxasistencia.Name = "textBoxasistencia";
-            this.textBoxasistencia.Size = new System.Drawing.Size(222, 20);
-            this.textBoxasistencia.TabIndex = 17;
+            this.textBox_ingresoasistencia.Location = new System.Drawing.Point(297, 126);
+            this.textBox_ingresoasistencia.Name = "textBox_ingresoasistencia";
+            this.textBox_ingresoasistencia.Size = new System.Drawing.Size(222, 20);
+            this.textBox_ingresoasistencia.TabIndex = 17;
             // 
             // label12
             // 
@@ -1351,9 +1351,9 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel_Asistencia;
-        private System.Windows.Forms.TextBox textBox_fechaasistencia;
+        private System.Windows.Forms.TextBox textBox_ingreso_fechaasistencia;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxasistencia;
+        private System.Windows.Forms.TextBox textBox_ingresoasistencia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox_nombrealumasistencia;
         private System.Windows.Forms.Label label14;

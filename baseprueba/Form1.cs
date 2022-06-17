@@ -102,8 +102,8 @@ namespace baseprueba
         private void button4_Click_1(object sender, EventArgs e)
         {
             textBox_nombrealumasistencia.Text = "";
-            textBox_fechaasistencia.Text = "";
-            textBoxasistencia.Text = "";
+            textBox_ingreso_fechaasistencia.Text = "";
+            textBox_ingresoasistencia.Text = "";
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
@@ -174,12 +174,12 @@ namespace baseprueba
             textBox_primedio.Text = "";
             ingresoMateriaVN.Text = "";
             panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
             panel_Ver_asistencia.Visible = false;
             panel_opciones_profesor.Visible = true;
             panel_ver_anotaciones.Visible = false;
+            panelverNotas.Visible = false;
         }
 
         ////////////////////////////--funciones de ingresar notas ------///////////////////////
@@ -206,7 +206,7 @@ namespace baseprueba
 
         private void boton_ingresarasistencia_Click(object sender, EventArgs e)
         {
-            if (textBox_nombrealumasistencia.Text.Equals("") || textBox_fechaasistencia.Text.Equals("") || textBoxasistencia.Text.Equals(""))
+            if (textBox_nombrealumasistencia.Text.Equals("") || textBox_ingreso_fechaasistencia.Text.Equals("") || textBox_ingresoasistencia.Text.Equals(""))
             {
                 MessageBox.Show("Por favor rellene todos los campos");
             }
@@ -214,10 +214,10 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, textBoxasistencia.Text, textBox_fechaasistencia.Text);
+                unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, textBox_ingresoasistencia.Text, textBox_ingreso_fechaasistencia.Text);
                 textBox_nombrealumasistencia.Text = "";
-                textBox_fechaasistencia.Text = "";
-                textBoxasistencia.Text = "";
+                textBox_ingreso_fechaasistencia.Text = "";
+                textBox_ingresoasistencia.Text = "";
                 MessageBox.Show("se ingreso la asistencia correctamente");
             }
         }
@@ -286,7 +286,8 @@ namespace baseprueba
             textBoxResultadoVN.Text = "";
             conection unaConexion = new conection();
             IMongoDatabase database = unaConexion.conexion_Mongo();
-            if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)){
+            if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)==true && ingresoMateriaVN.Text!="")
+            {
                 String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
                 foreach (var item in valores)
                 {
@@ -304,13 +305,29 @@ namespace baseprueba
                 {
                     suma = suma + item;
                 }
-                textBox_primedio.Text = ""+suma / contador;
+                if (suma==0)
+                {
+                    MessageBox.Show("El alumno no tiene notas en esta materia: "+ ingresoMateriaVN.Text);
+                }
+                else
+                {
+                    textBox_primedio.Text = "" + suma / contador;
+                }
+                
             }
             else
             {
-                MessageBox.Show("No existe el alumno en los registros");
-                textBoxIngresoNombreVN.Text = "";
-                ingresoMateriaVN.Text = "";
+                if (ingresoMateriaVN.Text == "")
+                {
+                    MessageBox.Show("Existen campos vacios");
+                }
+                else
+                {
+                    MessageBox.Show("No existe el alumno en los registros");
+                    textBoxIngresoNombreVN.Text = "";
+                    ingresoMateriaVN.Text = "";
+                }
+               
             }
             
         }
