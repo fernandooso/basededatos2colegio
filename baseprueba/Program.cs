@@ -18,14 +18,15 @@ namespace baseprueba
         {
             conection conection=new conection();
             IMongoDatabase database = conection.conexion_Mongo();
-            // conection.agregatest(database, "unadireccionrandom", "nombrepapatest", "1", "hacemucho", "unruttest", "nombrealumnotest",
-            //    "rutaltest", "hecpoco");
+            conection.agregatest(database, "unadireccionrandom", "sanmartint", "1", "hacemucho", "unruttest", "nombrealumnotest",
+                "rutaltest", "hecpoco");
 
-            conection.agrega_alumno(database, "ayer", "juan", "rrutloo", "4");
+           conection.agrega_alumno(database, "ayer", "juan", "rrutloo", "unruttest");
+            conection.agrega_alumno(database, "ayer", "miguel ramos", "rrutloo", "unruttest");
             /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());  */          
+            Application.Run(new Form1());  */
         }
         
     }

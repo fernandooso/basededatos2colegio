@@ -42,7 +42,7 @@ namespace baseprueba.modelos
         public void agrega_alumno(IMongoDatabase database,String fnac,
             String nomal, String rutal, String rutapoderado)
         {
-            var alumnop = new alumnotest()
+            var alumnop = new alumno()
             {
                 fecha_de_nacimiento = fnac,
                 nombre_alumno = nomal,
@@ -360,23 +360,19 @@ namespace baseprueba.modelos
             String nombre, String telefono, String fechanac, String rut,String nombrealumno, String rutalumno, String fnacal)
         {
             var apoderadodb = database.GetCollection<testeadora>("apoderado");
-            var apoderadoingreso = new testeadora()
-            {
-                direccion = direccion,
-                fecha_nacimiento = fechanac,
-                nombre_completo = nombre,
-                rut = rut,
-                telefono = telefono,
-                alumnillo= new alumnotest()
-                {
-                    fecha_de_nacimiento=fnacal,
-                    nombre_alumno=nombrealumno,
-                    rut_alumno=rutalumno
-                }
-                 
-            };
+           // var alumnotest = new alumnotest[](rutalumno, nombrealumno, fnacal);
+            alumnotest[] alumnos= { new alumnotest(rutalumno, nombrealumno, fnacal) };
+            var apoderadoingreso = new testeadora(nombre, rut, telefono, direccion, fechanac, alumnos);
 
-            apoderadodb.InsertOne(apoderadoingreso);
+           apoderadodb.InsertOne(apoderadoingreso);
+
+            /*BsonDocument documentillo = alumnop.ToBsonDocument();
+            BsonDocument newSubdocument = documentillo;
+            var collection = database.GetCollection<BsonDocument>("apoderado");
+            var filter = Builders<BsonDocument>.Filter.Eq("rut", rutapoderado);
+            var update = Builders<BsonDocument>.Update.Push("a_cargo", newSubdocument);
+            var result = collection.UpdateOne(filter, update);*/
+
         }
 
     }

@@ -9,6 +9,17 @@ namespace baseprueba.modelos
 {
     public class testeadora
     {
+        public testeadora(string nombre_completo, string rut, string telefono, string direccion, string fecha_nacimiento, alumnotest[] datosalumno)
+        {
+            
+            this.nombre_completo = nombre_completo;
+            this.rut = rut;
+            this.telefono = telefono;
+            this.direccion = direccion;
+            this.fecha_nacimiento = fecha_nacimiento;
+            this.datosalumno = datosalumno;
+        }
+
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string _id { get; set; }
@@ -23,7 +34,7 @@ namespace baseprueba.modelos
         [BsonElement("fecha_de_nacimiento")]
         public string fecha_nacimiento { get; set; }
         [BsonElement("a_cargo")]
-        public alumnotest alumnillo { get; set; }
+        public alumnotest[] datosalumno { get; set; }
     }
 
     public class alumnotest
@@ -31,5 +42,11 @@ namespace baseprueba.modelos
         public string rut_alumno { get; set; }
         public string nombre_alumno { set; get; }
         public string fecha_de_nacimiento { get; set; }
+        public alumnotest(string rut_alumno, string nombre_alumno, string fecha_de_nacimiento)
+        {
+            this.rut_alumno = rut_alumno;
+            this.nombre_alumno = nombre_alumno;
+            this.fecha_de_nacimiento = fecha_de_nacimiento;
+        }
     }
 }
