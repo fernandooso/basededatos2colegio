@@ -117,35 +117,43 @@ namespace baseprueba.modelos
 
         ////////////////////////7 consultas///////////////////////////////////
 
-        //ve si un alumno tiene anotaciones, si las tiene las muestra en pantalla
-        public void consulta_anotacion(IMongoDatabase database, String nombrealumno)
+        // ---------------- devuelve las anotaciones de un alumno
+        public String[] consulta_anotacion(IMongoDatabase database, String nombrealumno)
         {
             var consultadb = database.GetCollection<anotacion>("anotacion");
-            if(consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombrealumno))
-            {
-                var query = consultadb.AsQueryable<anotacion>();
-                foreach (var anotado in query)
+            var query = consultadb.AsQueryable<anotacion>();
+            int cont = 0;
+            String espacio = " ";
+
+            foreach (var anotado in query)
                 {
                     if (nombrealumno == anotado.nombre_alumno)
                     {
-                        Console.WriteLine(anotado.comentario + " " + anotado.tipo);
+                    cont++;
                     }
                 }
-            }
-            else
+            String[] anotaciones = new String[cont];
+            int i = 0;
+            foreach (var anotado in query)
             {
-                Console.WriteLine("no se encontro");
+                if (nombrealumno == anotado.nombre_alumno)
+                {
+                    anotaciones[i] ="Tipo: "+anotado.tipo+": "+anotado.comentario+espacio+"Fecha: "+anotado.fecha;
+                    i++;
+                }
             }
+            return anotaciones;
+
         }
-        //ve si el alumno existe, si es asi devuelve las notas
+
+        //------- consulta que devuelve las notas de un alumno por materia
         public String[] consulta_notas(IMongoDatabase database, String nombrealumno,
             String materia)
         {
             int contador = 0;
             String espacio = " ";
             var consultadb = database.GetCollection<notas>("notas");
-            
-            
+
             var query = consultadb.AsQueryable<notas>();
             foreach (var alumno in query)
             {
@@ -162,62 +170,110 @@ namespace baseprueba.modelos
                     if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
                     {
                     valores[i] = alumno.nota + espacio + alumno.materia;    
-                   // Console.WriteLine(alumno.nota+espacio+alumno.materia);//se hace lo que se desee
                     i++;
                     }
                 }
             return valores;
         }
-        //ve si el alumno existe, si es asi devuelve las asistencia
+        //----------------Devuelve las notas en int para sacar promedio---------------------------------------
+        public Double[] consulta_notas_promedio(IMongoDatabase database, String nombrealumno,
+           String materia)
+        {
+            int contador = 0;
+            String espacio = " ";
+            var consultadb = database.GetCollection<notas>("notas");
+
+            var query = consultadb.AsQueryable<notas>();
+            foreach (var alumno in query)
+            {
+                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                {
+                    contador++;
+                }
+            }
+
+            Double[] notas = new Double[contador];
+            int i = 0;
+            foreach (var alumno in query)
+            {
+                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                {
+                    notas[i] = Convert.ToDouble(alumno.nota);
+                    i++;
+                }
+            }
+            return notas;
+        }
+
+
+
+        //------------- devuelve asistencia de un alumno
         public double consulta_asistencia(IMongoDatabase database, String nombrealumno)
         {
             double i = 0;
             var consultadb = database.GetCollection<Asistencia>("asistencia");
-            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
-            {
                 var query = consultadb.AsQueryable<Asistencia>();
                 foreach (var alumno in query)
                 {
                     if (nombrealumno == alumno.nombre_alumno && alumno.asistencia=="si")
                     {
                        
-                       Console.WriteLine(alumno.asistencia);
+                      
                         i++;
                        
                     }
                 }
-            }
-            else
-            {
-                Console.WriteLine("no se encontro");
-            }
             return i;
         }
-
+        // consulta que devuelve el total de asistencia d eun laumno tanto asistidos como no asistidos
         public double consulta_asistencia_total(IMongoDatabase database, String nombrealumno)
         {
             double i = 0;
             var consultadb = database.GetCollection<Asistencia>("asistencia");
-            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombrealumno))
-            {
+            
                 var query = consultadb.AsQueryable<Asistencia>();
                 foreach (var alumno in query)
                 {
                     if (nombrealumno == alumno.nombre_alumno)
                     {
 
-                        Console.WriteLine(alumno.asistencia);
+                        
                         i++;
 
                     }
                 }
-            }
-            else
-            {
-                Console.WriteLine("no se encontro");
-            }
             return i;
         }
+        //-------------------retorna el detalle de la asistencia
+        public String[] consulta_asistencia_detalle(IMongoDatabase database, String nombrealumno)
+        {
+            int i = 0;
+            var consultadb = database.GetCollection<Asistencia>("asistencia");
+
+            var query = consultadb.AsQueryable<Asistencia>();
+            foreach (var alumno in query)
+            {
+                if (nombrealumno == alumno.nombre_alumno)
+                {
+                    i++;
+
+                }
+            }
+            String[] asistencia= new String[i];
+            int cont = 0;
+            foreach (var alumno in query)
+            {
+                if (nombrealumno == alumno.nombre_alumno)
+                {
+                    asistencia[cont] = alumno.fecha + ": " + alumno.asistencia;
+                    cont++;
+                }
+            }
+            return  asistencia;
+        }
+
+
+
         //ve si el profeexiste, si es asi devuelve su info
         public void consulta_datosprofe(IMongoDatabase database, String nombreprofe)
         {
@@ -239,8 +295,8 @@ namespace baseprueba.modelos
             }
         }
 
-        /////////////////////verificar existencia
-        public bool existencia(IMongoDatabase database, String nombreabuscar)
+        /////////////////////------ funciones que verifican existencia
+        public bool existenciaasistencia(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<Asistencia>("asistencia");
             if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombreabuscar))
@@ -265,6 +321,19 @@ namespace baseprueba.modelos
                 return false;
             }
 
+        }
+
+        public bool existenciaanotacion(IMongoDatabase database, String nombreabuscar)
+        {
+            var consultadb = database.GetCollection<anotacion>("anotacion");
+            if (consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombreabuscar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

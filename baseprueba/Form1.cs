@@ -27,6 +27,7 @@ namespace baseprueba
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace baseprueba
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace baseprueba
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = true;
             panel_anotacion.Visible = false;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace baseprueba
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -72,6 +76,7 @@ namespace baseprueba
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -81,6 +86,7 @@ namespace baseprueba
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
             panel_Asistencia.Visible = true;
+            panel_ver_anotaciones.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -89,9 +95,96 @@ namespace baseprueba
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+        }
+       
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            textBox_nombrealumasistencia.Text = "";
+            textBox_fechaasistencia.Text = "";
+            textBoxasistencia.Text = "";
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
         }
 
-        private void button8_Click(object sender, EventArgs e)//ingresa notas
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panelverNotas.Visible = true;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            //aca lo de ver asistencia
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+        }
+
+        private void button_Ver_asistencia_Click(object sender, EventArgs e)
+        {
+            //abre panle asistencia
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = true;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+        }
+
+        private void button_ver_anotaciones_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = true;
+        }
+        private void button7_volver_panleveranotaciones_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+        }
+        private void button5_volver_vernotas_Click(object sender, EventArgs e)
+        {
+            textBoxIngresoNombreVN.Text = "";
+            textBoxResultadoVN.Text = "";
+            textBox_primedio.Text = "";
+            ingresoMateriaVN.Text = "";
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+        }
+
+        ////////////////////////////--funciones de ingresar notas ------///////////////////////
+
+        private void button8_Click(object sender, EventArgs e)
         {
             if (textBox_Nombre_Alumno_notas.Text.Equals("") || textBox_Materia_panelnotas.Text.Equals("") || textBox_Nota.Text.Equals(""))
             {
@@ -109,6 +202,7 @@ namespace baseprueba
             }
 
         }
+        ////////////////////////////--funciones de ingresar asistencia------///////////////////////
 
         private void boton_ingresarasistencia_Click(object sender, EventArgs e)
         {
@@ -128,6 +222,7 @@ namespace baseprueba
             }
         }
 
+        ////////////////////////////-- funciones de ingresar anotacion------///////////////////////
         private void boton_ingresaanotacion_Click(object sender, EventArgs e)
         {
             if (textBox_nom_al_anotacion.Text.Equals("") || textBox_anotacion.Text.Equals("")
@@ -150,103 +245,98 @@ namespace baseprueba
                 MessageBox.Show("se ingreso la anotacion correctamente");
             }
         }
+        //---------------------------------------------------------------------------------------------------//
+        //////////////////////////------- funciones de los botones con la base de datos ---/////////////////
+        //----------------------------------------------------------------------------------------------------//
 
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            textBox_nombrealumasistencia.Text = "";
-            textBox_fechaasistencia.Text = "";
-            textBoxasistencia.Text = "";
-            panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = false;
-            panel_nota.Visible = false;
-            panel_anotacion.Visible = false;
-            panel_opciones_profesor.Visible = true;
-        }
+        
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = false;
-            panel_nota.Visible = false;
-            panel_anotacion.Visible = false;
-            panelverNotas.Visible = true;
-            panel_opciones_profesor.Visible = false;
-        }
-
-        private void button4_Click_2(object sender, EventArgs e)
-        {
-            //aca lo de ver asistencia
-            panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = false;
-            panel_nota.Visible = false;
-            panel_anotacion.Visible = false;
-            panel_Ver_asistencia.Visible = false;
-            panel_opciones_profesor.Visible = true;
-        }
-
-        private void button_Ver_asistencia_Click(object sender, EventArgs e)
-        {
-            //abre panle asistencia
-            panel_Login.Visible = false;
-            panel_opciones_profesor.Visible = false;
-            panel_nota.Visible = false;
-            panel_anotacion.Visible = false;
-            panel_Ver_asistencia.Visible = true;
-            panel_opciones_profesor.Visible = false;
-        }
-
+        //////////////---funciones para ver asistencia---/////////////////////
         private void button_verasistencia_Click(object sender, EventArgs e)
         {
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
-            if (unaconexion.existencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
+            if (unaconexion.existenciaasistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
             {
                 double diasasistido = unaconexion.consulta_asistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
-
-                //double diastotales = Convert.ToDouble(textBox_porcentaje_Ver_Asistencia.Text);
                 double diastotales = unaconexion.consulta_asistencia_total(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
-                textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
-
+               
                 Double calculo = (diasasistido / diastotales) * 100;
-                textBox_Asitencia_Ver_asistencia.Text = "dias transcurridos: " + diastotales + "\n" + "dias asistidos: " + diasasistido + "\n" + "porcentaje de asistencia= " + Math.Round(calculo, 2) + "%";
 
+                String[] asistencia = unaconexion.consulta_asistencia_detalle(database, textBox_Nombre_Alumno_Ver_Asistencia.Text);
+                foreach (var item in asistencia)
+                {
+                    textBox_Asitencia_Ver_asistencia.Text = textBox_Asitencia_Ver_asistencia.Text + item + "\r\n";
+
+                }
+                textBox_porcentaje_asistencia.Text = "dias transcurridos: " + diastotales + "\n" + ", dias asistidos: " + diasasistido + "\n" + ", porcentaje de asistencia= " + Math.Round(calculo, 2) + "%"; ;
             }
             else
             {
-                MessageBox.Show("no existe el alumno en los registros ctm");
+                MessageBox.Show("No existe el alumno en los registros");
                 textBox_Nombre_Alumno_Ver_Asistencia.Text = "";
             }
 
 
         }
-
+        //////////////---funciones para ver notas---/////////////////////
         private void btVerNotas_Click(object sender, EventArgs e)
         {
+            textBox_primedio.Text = "";
+            textBoxResultadoVN.Text = "";
             conection unaConexion = new conection();
             IMongoDatabase database = unaConexion.conexion_Mongo();
             if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)){
                 String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
-
-
                 foreach (var item in valores)
                 {
                     textBoxResultadoVN.Text= textBoxResultadoVN.Text+item+ "\r\n";
-
-
                 }
 
-             
-                
+                Double[] notas = unaConexion.consulta_notas_promedio(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
+                int contador = 0;
+                foreach (var item in notas)
+                {
+                    contador++;
+                }
+                double suma=0;
+                foreach (var item in notas)
+                {
+                    suma = suma + item;
+                }
+                textBox_primedio.Text = ""+suma / contador;
             }
             else
             {
-                MessageBox.Show("no existe el alumno en los registros ctm");
+                MessageBox.Show("No existe el alumno en los registros");
                 textBoxIngresoNombreVN.Text = "";
                 ingresoMateriaVN.Text = "";
             }
             
         }
+        //---------------------- funciones para ver anotaciones -----------
+  
 
- 
+        private void boton_veraanotaciones_panelveranotaciones_Click(object sender, EventArgs e)
+        {
+            conection unaconexion = new conection();
+            IMongoDatabase database = unaconexion.conexion_Mongo();
+            if (unaconexion.existenciaanotacion(database, textBox_nombrealumno_ver_anotaciones.Text))
+            {
+                String[] anotaciones = unaconexion.consulta_anotacion(database, textBox_nombrealumno_ver_anotaciones.Text);
+                foreach (var item in anotaciones)
+                {
+                    textBox_resultados_anotaciones.Text = textBox_resultados_anotaciones.Text + item+ "\r\n"+ "------------------------------------------------------------------------------------------------------------------------------" + "\r\n";
+                }
+            }
+            else
+            {
+                MessageBox.Show("No existe el alumno en los registros");
+                textBox_nombre_alumno_ver_anotaciones.Text = "";
+
+            }
+        }
+
+      
     }
 }

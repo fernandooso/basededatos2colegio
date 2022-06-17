@@ -11,26 +11,14 @@ using System.Windows.Forms;
 
 namespace baseprueba
 {
-    internal  class Program:conection
+    internal  class Program
     {
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-
-           /* conection unaconexion = new conection();
-
-            IMongoDatabase database=unaconexion.conexion_Mongo();
-            unaconexion.consulta_anotacion(database,"jandi");
-            Console.WriteLine("");
-            unaconexion.consulta_notas(database, "pedrito","lenguaje");
-            Console.WriteLine("");
-            unaconexion.consulta_asistencia(database, "pepe");
-            Console.WriteLine("");
-            unaconexion.consulta_datosprofe(database, "profesr");*/
-            
+            Application.Run(new Form1());            
         }
         
     }
