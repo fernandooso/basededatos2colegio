@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace baseprueba.modelos
 {
-    public class apoderado
+    public class testeadora
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
@@ -22,9 +22,14 @@ namespace baseprueba.modelos
         public string direccion { get; set; }
         [BsonElement("fecha_de_nacimiento")]
         public string fecha_nacimiento { get; set; }
+        [BsonElement("a_cargo")]
+        public alumnotest alumnillo { get; set; }
+    }
 
-       
-
-        
+    public class alumnotest
+    {
+        public string rut_alumno { get; set; }
+        public string nombre_alumno { set; get; }
+        public string fecha_de_nacimiento { get; set; }
     }
 }

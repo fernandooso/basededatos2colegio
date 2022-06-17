@@ -1,4 +1,4 @@
-﻿using baseprueba.conexion;
+﻿using baseprueba.modelos;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -12,7 +12,7 @@ namespace baseprueba.modelos
     internal class conection
     {
         
-        
+
         public IMongoDatabase conexion_Mongo()
         {
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
@@ -42,7 +42,7 @@ namespace baseprueba.modelos
         public void agrega_alumno(IMongoDatabase database,String fnac,
             String nomal, String rutal, String rutapoderado)
         {
-            var alumnop = new alumno()
+            var alumnop = new alumnotest()
             {
                 fecha_de_nacimiento = fnac,
                 nombre_alumno = nomal,
@@ -225,6 +225,24 @@ namespace baseprueba.modelos
                 }
             return i;
         }
+        //----------------------devuelve la contraseña de profesor
+        public String consulta_contraseña(IMongoDatabase database, String rutbuscar)
+        {
+            var consultadb = database.GetCollection<profesor>("profesor");
+            String contraseña = "";
+            var query = consultadb.AsQueryable<profesor>();
+            foreach (var profe in query)
+            {
+                if (rutbuscar == profe.rut)
+                {
+                    contraseña = profe.contraseña;
+                }
+            }
+            Console.WriteLine(contraseña);
+            return contraseña;
+        }
+
+
         // consulta que devuelve el total de asistencia d eun laumno tanto asistidos como no asistidos
         public double consulta_asistencia_total(IMongoDatabase database, String nombrealumno)
         {
@@ -273,7 +291,10 @@ namespace baseprueba.modelos
         }
 
 
-        /////////////////////------ funciones que verifican existencia
+        /////////////////////------ funciones que verifican existencia/////////////////////////////////
+        ///--------------------------------------------------------------------------------------/
+
+        /////////////////////------ funcion que verifican existencia del alumno en asistencia
         public bool existenciaasistencia(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<Asistencia>("asistencia");
@@ -287,6 +308,9 @@ namespace baseprueba.modelos
             }
             
         }
+
+        /////////////////////------ funcion que verifican existencia del alumno en notas
+
         public bool existenciaNotas(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<notas>("notas");
@@ -300,6 +324,7 @@ namespace baseprueba.modelos
             }
 
         }
+        /////////////////////------ funcion que verifican existencia del alumno en anotacion
 
         public bool existenciaanotacion(IMongoDatabase database, String nombreabuscar)
         {
@@ -313,6 +338,9 @@ namespace baseprueba.modelos
                 return false;
             }
         }
+
+        /////////////////////------ funcion que verifican existencia del profesor
+
         public bool exitenciaprofesor(IMongoDatabase database, String rutbuscar)
         {
             var consultadb = database.GetCollection<profesor>("profesor");
@@ -325,21 +353,31 @@ namespace baseprueba.modelos
                 return false;
             }
         }
-        //d-------------devuelve la contreña del profesor
-        public String consulta_contraseña(IMongoDatabase database, String rutbuscar)
+
+        //////////////////////////////////////----------------prueba
+        ///
+        public void agregatest(IMongoDatabase database, String direccion,
+            String nombre, String telefono, String fechanac, String rut,String nombrealumno, String rutalumno, String fnacal)
         {
-            var consultadb = database.GetCollection<profesor>("profesor");
-            String contraseña = "";
-            var query = consultadb.AsQueryable<profesor>();
-            foreach (var profe in query)
+            var apoderadodb = database.GetCollection<testeadora>("apoderado");
+            var apoderadoingreso = new testeadora()
             {
-                if (rutbuscar == profe.rut)
+                direccion = direccion,
+                fecha_nacimiento = fechanac,
+                nombre_completo = nombre,
+                rut = rut,
+                telefono = telefono,
+                alumnillo= new alumnotest()
                 {
-                    contraseña = profe.contraseña;
+                    fecha_de_nacimiento=fnacal,
+                    nombre_alumno=nombrealumno,
+                    rut_alumno=rutalumno
                 }
-            }
-            Console.WriteLine(contraseña);
-            return contraseña;
+                 
+            };
+
+            apoderadodb.InsertOne(apoderadoingreso);
         }
+
     }
 }
