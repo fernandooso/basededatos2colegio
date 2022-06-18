@@ -115,6 +115,7 @@ namespace baseprueba
             textBox_nombrealumasistencia.Text = "";
             textBox_ingreso_fechaasistencia.Text = "";
             textBox_ingresoasistencia.Text = "";
+            panel_Asistencia.Visible=false;
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = false;
             panel_nota.Visible = false;
