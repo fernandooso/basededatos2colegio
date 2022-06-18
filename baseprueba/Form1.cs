@@ -277,6 +277,7 @@ namespace baseprueba
         private void button_volverpaneldatos_Click(object sender, EventArgs e)
         {
             textBox_nombreconsultadatos.Text = "";
+            textBox2.Text = "";
             panel_consultadatos.Visible = false;
             panel_Login.Visible = false;
             panel_nota.Visible = false;

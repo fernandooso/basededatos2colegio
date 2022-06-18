@@ -256,7 +256,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(810, 699);
+            this.panel3.Size = new System.Drawing.Size(1370, 699);
             this.panel3.TabIndex = 10;
             // 
             // panel_consultadatos
@@ -281,9 +281,9 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(266, 37);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(74, 13);
+            this.label41.Size = new System.Drawing.Size(117, 13);
             this.label41.TabIndex = 20;
-            this.label41.Text = "Ver Asistencia";
+            this.label41.Text = "Consultar datos alumno";
             // 
             // textBox2
             // 
@@ -870,7 +870,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox10.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox10.Location = new System.Drawing.Point(464, -1);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(350, 700);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1022,7 +1022,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox8.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox8.Location = new System.Drawing.Point(466, -1);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(350, 700);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1137,7 +1137,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox6.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox6.Location = new System.Drawing.Point(464, 0);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(350, 700);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1651,7 +1651,7 @@
             // pictureBox24
             // 
             this.pictureBox24.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox24.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox24.Location = new System.Drawing.Point(466, 0);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(350, 700);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1867,7 +1867,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox22.Location = new System.Drawing.Point(472, 3);
+            this.pictureBox22.Location = new System.Drawing.Point(466, -3);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(350, 700);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1878,7 +1878,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 699);
+            this.ClientSize = new System.Drawing.Size(1370, 699);
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "Form1";
