@@ -18,7 +18,7 @@ namespace baseprueba
         {
             conection conection=new conection();
             IMongoDatabase database = conection.conexion_Mongo();
-            conection.agregatest(database, "unadireccionrandom", "sanmartint", "1", "hacemucho", "unruttest", "nombrealumnotest",
+            conection.agregaapoderado(database, "unadireccionrandom", "sanmartint", "1", "hacemucho", "unruttest", "nombrealumnotest",
                 "rutaltest", "hecpoco");
 
            conection.agrega_alumno(database, "ayer", "juan", "rrutloo", "unruttest");

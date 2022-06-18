@@ -22,23 +22,18 @@ namespace baseprueba.modelos
 
             return database;
         }
-        
-        public void agregar_apoderado(IMongoDatabase database,String direccion,
-            String nombre,String telefono, String fechanac, String rut)
+        //---------------------------- metodo que agrega un apoderado -------------------------
+        public void agregaapoderado(IMongoDatabase database, String direccion,
+            String nombre, String telefono, String fechanac, String rut, String nombrealumno, String rutalumno, String fnacal)
         {
             var apoderadodb = database.GetCollection<apoderado>("apoderado");
-            var apoderadoingreso = new apoderado()
-            {
-                direccion = direccion,
-                fecha_nacimiento = fechanac,
-                nombre_completo = nombre,
-                rut = rut,
-                telefono = telefono
-            };
+            alumnotest[] alumnos = { new alumnotest(rutalumno, nombrealumno, fnacal) };
+            var apoderadoingreso = new apoderado(nombre, rut, telefono, direccion, fechanac, alumnos);
 
             apoderadodb.InsertOne(apoderadoingreso);
-        }
 
+        }
+        //----------------metodo que agrega un alumno a un apoderado que tiene mas de un alumno
         public void agrega_alumno(IMongoDatabase database,String fnac,
             String nomal, String rutal, String rutapoderado)
         {
@@ -56,7 +51,7 @@ namespace baseprueba.modelos
             var update = Builders<BsonDocument>.Update.Push("a_cargo", newSubdocument);
             var result = collection.UpdateOne(filter, update);
         }
-
+        //----------------------- metodo que agrga anotaciones------------------------------
         public void agrega_anotacion(IMongoDatabase database,String nomal,
             String comentario, String tipo,String materia, String fechano)
         {
@@ -71,7 +66,7 @@ namespace baseprueba.modelos
             };
             anotaciondb.InsertOne(anotacioningreso);
         }
-
+        //----------------------------------- metodo que agrega asistencia -------------------
         public void agrega_asistencia(IMongoDatabase database,String nombre_alumno,
             String asistenciaa, String fecha)
         {
@@ -84,7 +79,7 @@ namespace baseprueba.modelos
             };
             asistenciandb.InsertOne(asistenciaingreso);
         }
-
+        //----------------------------------- metodo que agrega notas ----------------------
         public void agrega_notas(IMongoDatabase database, String nombre_alumno, String materia,
             String nota)
         {
@@ -97,7 +92,7 @@ namespace baseprueba.modelos
             };
             notasdb.InsertOne(notaingreso);
         }
-
+        //-------------------------------- metodo que agrega profesores ---------------------------
         public void agrega_profesor(IMongoDatabase database, String nombre_completo, String rut,
             String telefono, String especialidad, String curso_jefatura, String fecha, String contraseña)
         {
@@ -115,7 +110,7 @@ namespace baseprueba.modelos
             profesordb.InsertOne(profeingreso);
         }
 
-        ////////////////////////7 consultas///////////////////////////////////
+        //////////////////////// consultas///////////////////////////////////
 
         // ---------------- devuelve las anotaciones de un alumno
         public String[] consulta_anotacion(IMongoDatabase database, String nombrealumno)
@@ -352,20 +347,6 @@ namespace baseprueba.modelos
             {
                 return false;
             }
-        }
-
-        //////////////////////////////////////----------------prueba
-        ///
-        public void agregatest(IMongoDatabase database, String direccion,
-            String nombre, String telefono, String fechanac, String rut,String nombrealumno, String rutalumno, String fnacal)
-        {
-            var apoderadodb = database.GetCollection<testeadora>("apoderado");
-            alumnotest[] alumnos= { new alumnotest(rutalumno, nombrealumno, fnacal) };
-            var apoderadoingreso = new testeadora(nombre, rut, telefono, direccion, fechanac, alumnos);
-
-           apoderadodb.InsertOne(apoderadoingreso);
-
-
         }
 
     }
