@@ -499,7 +499,7 @@ namespace baseprueba
                 }
                 else
                 {
-                    textBox_primedio.Text = "" + suma / contador;
+                    textBox_primedio.Text = "" + Math.Round(suma / contador, 2); ;
                 }
                 
             }
@@ -559,6 +559,6 @@ namespace baseprueba
             
         }
 
-   
+
     }
 }

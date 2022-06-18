@@ -18,7 +18,7 @@ namespace baseprueba.modelos
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var database = client.GetDatabase("TallerBD2");
+            var database = client.GetDatabase("baseprueba");
 
             return database;
         }
@@ -302,7 +302,7 @@ namespace baseprueba.modelos
                     }
                     cont++;
                 }
-         
+                cont = 0;
             }
             //Console.WriteLine(datos);
             return datos;
@@ -400,7 +400,7 @@ namespace baseprueba.modelos
                     }
                     cont++;
                 }
-
+                cont = 0;
             }
             
             return false ;
