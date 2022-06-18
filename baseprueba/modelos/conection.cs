@@ -360,18 +360,11 @@ namespace baseprueba.modelos
             String nombre, String telefono, String fechanac, String rut,String nombrealumno, String rutalumno, String fnacal)
         {
             var apoderadodb = database.GetCollection<testeadora>("apoderado");
-           // var alumnotest = new alumnotest[](rutalumno, nombrealumno, fnacal);
             alumnotest[] alumnos= { new alumnotest(rutalumno, nombrealumno, fnacal) };
             var apoderadoingreso = new testeadora(nombre, rut, telefono, direccion, fechanac, alumnos);
 
            apoderadodb.InsertOne(apoderadoingreso);
 
-            /*BsonDocument documentillo = alumnop.ToBsonDocument();
-            BsonDocument newSubdocument = documentillo;
-            var collection = database.GetCollection<BsonDocument>("apoderado");
-            var filter = Builders<BsonDocument>.Filter.Eq("rut", rutapoderado);
-            var update = Builders<BsonDocument>.Update.Push("a_cargo", newSubdocument);
-            var result = collection.UpdateOne(filter, update);*/
 
         }
 
