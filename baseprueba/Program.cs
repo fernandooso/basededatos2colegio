@@ -16,17 +16,13 @@ namespace baseprueba
         [STAThread]
         private static void Main()
         {
-            conection conection=new conection();
+            /*conection conection=new conection();
             IMongoDatabase database = conection.conexion_Mongo();
-            conection.agregaapoderado(database, "unadireccionrandom", "sanmartint", "1", "hacemucho", "unruttest", "nombrealumnotest",
-                "rutaltest", "hecpoco");
-
-           conection.agrega_alumno(database, "ayer", "juan", "rrutloo", "unruttest");
-            conection.agrega_alumno(database, "ayer", "miguel ramos", "rrutloo", "unruttest");
-            /*
+            conection.consuladatos(database, "jaimito");
+            */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());  */
+            Application.Run(new Form1());  
         }
         
     }

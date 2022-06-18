@@ -198,6 +198,106 @@ namespace baseprueba
             panelverNotas.Visible = false;
         }
 
+        private void button_agregaapoderado_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panel_agregarapoderado.Visible = true;
+        }
+        private void button_volver_panelingresoapoderado_Click(object sender, EventArgs e)
+        {
+            textBox_ingresodireccionapoderado.Text = "";
+            textBox_ingresarnombreapoderado.Text = "";
+            textBox_ingresotelefonoapoderdao.Text = "";
+            textBox_ingresofechadenacimientoapoderado.Text = "";
+            textBox_ingresorutapoderado.Text = "";
+            textBox_ingresonombrealumno_panelingreso.Text = "";
+            textBox_ingresorutalumno_panleingreso.Text = "";
+            textBox_ingresofnacalumno_panelingreso.Text = "";
+            panel_Login.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+            panelverNotas.Visible = false;
+            panel_agregarapoderado.Visible = false;
+        }
+
+        private void button_agregar_mas_alumnos_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panel_agregarapoderado.Visible = false;
+            panel_agregaralumnos.Visible = true;
+        }
+
+        private void button_volver_panleingresoalunos_Click(object sender, EventArgs e)
+        {
+            textBox_fnacalumnos_panlealumnos.Text = "";
+            textBox_nombrealumno_panelalumnos.Text = "";
+            textBox_rutalumno_panelalumnos.Text = "";
+            textBox_rutap_alumnos.Text = "";
+            panel_Login.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panelverNotas.Visible = false;
+            panel_agregarapoderado.Visible = true;
+            panel_agregaralumnos.Visible =false;
+        }
+
+        private void button_consultadatosalumnos_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panel_agregarapoderado.Visible = false;
+            panel_agregaralumnos.Visible = false;
+            panel_consultadatos.Visible = true;
+        }
+
+
+        private void button_volverpaneldatos_Click(object sender, EventArgs e)
+        {
+            textBox_nombreconsultadatos.Text = "";
+            panel_consultadatos.Visible = false;
+            panel_Login.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = true;
+            panel_ver_anotaciones.Visible = false;
+            panelverNotas.Visible = false;
+            panel_agregarapoderado.Visible = false;
+        }
+
+
+
+
+
+
+
+
+
+
+
         ////////////////////////////--funciones de ingresar notas ------///////////////////////
 
         private void button8_Click(object sender, EventArgs e)
@@ -261,11 +361,81 @@ namespace baseprueba
                 MessageBox.Show("se ingreso la anotacion correctamente");
             }
         }
+
+        //---------------------------------------- ingreso de apoderado
+        private void button_ingresarapoderado_Click(object sender, EventArgs e)
+        {
+            conection unaconexion = new conection();
+            IMongoDatabase database = unaconexion.conexion_Mongo();
+            if (unaconexion.exitenciaapoderado(database, textBox_ingresorutapoderado.Text))
+            {
+                MessageBox.Show("El apoderado ya existe");
+            }
+            else
+            {
+                if (textBox_ingresodireccionapoderado.Text.Equals("") || textBox_ingresarnombreapoderado.Text.Equals("") || textBox_ingresotelefonoapoderdao.Text.Equals("") ||
+               textBox_ingresofechadenacimientoapoderado.Text.Equals("") || textBox_ingresorutapoderado.Text.Equals("") ||
+               textBox_ingresonombrealumno_panelingreso.Text.Equals("") || textBox_ingresorutalumno_panleingreso.Text.Equals("") || textBox_ingresofnacalumno_panelingreso.Text.Equals(""))
+                {
+                    MessageBox.Show("Rellene todos los campos");
+                }
+                else
+                {
+                    unaconexion.agregaapoderado(database, textBox_ingresodireccionapoderado.Text, textBox_ingresarnombreapoderado.Text, textBox_ingresotelefonoapoderdao.Text,
+                    textBox_ingresofechadenacimientoapoderado.Text, textBox_ingresorutapoderado.Text,
+                    textBox_ingresonombrealumno_panelingreso.Text, textBox_ingresorutalumno_panleingreso.Text, textBox_ingresofnacalumno_panelingreso.Text);
+                    textBox_ingresodireccionapoderado.Text = "";
+                    textBox_ingresarnombreapoderado.Text = "";
+                    textBox_ingresotelefonoapoderdao.Text = "";
+                    textBox_ingresofechadenacimientoapoderado.Text = "";
+                    textBox_ingresorutapoderado.Text = "";
+                    textBox_ingresonombrealumno_panelingreso.Text = "";
+                    textBox_ingresorutalumno_panleingreso.Text = "";
+                    textBox_ingresofnacalumno_panelingreso.Text = "";
+                }
+
+            }
+
+        }
+
+
+        private void button_ingresardatosalumnos_Click(object sender, EventArgs e)
+        {
+            conection unaconexion = new conection();
+            IMongoDatabase database = unaconexion.conexion_Mongo();
+            if (unaconexion.exitenciaapoderado(database, textBox_rutap_alumnos.Text))
+            {
+                if (textBox_fnacalumnos_panlealumnos.Text.Equals("")|| textBox_nombrealumno_panelalumnos.Text.Equals("") ||
+                        textBox_rutalumno_panelalumnos.Text.Equals("") || textBox_rutap_alumnos.Text.Equals(""))
+                {
+                    MessageBox.Show("Rellene todos los campos");
+                }
+                else
+                {
+                    unaconexion.agrega_alumno(database, textBox_fnacalumnos_panlealumnos.Text, textBox_nombrealumno_panelalumnos.Text,
+                        textBox_rutalumno_panelalumnos.Text, textBox_rutap_alumnos.Text);
+                    textBox_fnacalumnos_panlealumnos.Text = "";
+                    textBox_nombrealumno_panelalumnos.Text = "";
+                    textBox_rutalumno_panelalumnos.Text = "";
+                    textBox_rutap_alumnos.Text = "";
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No existe ese rut en los registros");
+
+            }
+        }
+
+
+
+
         //---------------------------------------------------------------------------------------------------//
         //////////////////////////------- funciones de los botones con la base de datos ---/////////////////
         //----------------------------------------------------------------------------------------------------//
 
-        
+
 
         //////////////---funciones para ver asistencia---/////////////////////
         private void button_verasistencia_Click(object sender, EventArgs e)
@@ -370,6 +540,23 @@ namespace baseprueba
             }
         }
 
-      
+        private void button_consultardatos_Click(object sender, EventArgs e)
+        {
+            conection unaconexion = new conection();
+            IMongoDatabase database = unaconexion.conexion_Mongo();
+            if (unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text))
+            {
+                String datos = unaconexion.consuladatos(database, textBox_nombreconsultadatos.Text);
+                textBox2.Text = datos;
+            }
+            else
+            {
+                MessageBox.Show("No existe el alumno en los registros");
+                textBox_nombreconsultadatos.Text = "";
+            }
+            
+        }
+
+   
     }
 }

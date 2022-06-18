@@ -284,7 +284,29 @@ namespace baseprueba.modelos
             }
             return  asistencia;
         }
+        //------------------------ funcion que consulta los datos de un alumno
+        public String consuladatos(IMongoDatabase database, String nombrealumno)
+        {
+            String datos ="";
 
+            var consultadb = database.GetCollection<apoderado>("apoderado");
+            var query = consultadb.AsQueryable<apoderado>();
+            int cont = 0;
+            foreach (var alumno in query)
+            {
+                foreach (var item in alumno.datosalumno)
+                {
+                    if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
+                    {
+                        datos = "Nombre apoderado: " + alumno.nombre_completo + "\r\n" + "Telefono apoderado: " + alumno.telefono + "\r\n" + "Direccion: " + alumno.direccion;
+                    }
+                    cont++;
+                }
+         
+            }
+            //Console.WriteLine(datos);
+            return datos;
+        }
 
         /////////////////////------ funciones que verifican existencia/////////////////////////////////
         ///--------------------------------------------------------------------------------------/
@@ -347,6 +369,41 @@ namespace baseprueba.modelos
             {
                 return false;
             }
+        }
+        //--------------------- verifica existencia del apoderado
+        public bool exitenciaapoderado(IMongoDatabase database, String rutbuscar)
+        {
+            var consultadb = database.GetCollection<apoderado>("apoderado");
+            if (consultadb.AsQueryable<apoderado>().Any(c => c.rut == rutbuscar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
+        {
+            var consultadb = database.GetCollection<apoderado>("apoderado");
+            var query = consultadb.AsQueryable<apoderado>();
+            int cont = 0;
+            foreach (var alumno in query)
+            {
+                foreach (var item in alumno.datosalumno)
+                {
+                    if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
+                    {
+                        return true;
+                    }
+                    cont++;
+                }
+
+            }
+            
+            return false ;
         }
 
     }

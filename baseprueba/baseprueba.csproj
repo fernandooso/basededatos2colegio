@@ -142,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="modelos\anotacion.cs" />
-    <Compile Include="modelos\apoderado.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,7 +150,7 @@
     </Compile>
     <Compile Include="modelos\alumno.cs" />
     <Compile Include="modelos\asistencia.cs" />
-    <Compile Include="modelos\testeadora.cs" />
+    <Compile Include="modelos\apoderado.cs" />
     <Compile Include="modelos\conection.cs" />
     <Compile Include="modelos\notas.cs" />
     <Compile Include="modelos\profesor.cs" />
