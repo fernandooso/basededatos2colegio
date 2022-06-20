@@ -18,7 +18,7 @@ namespace baseprueba.modelos
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var database = client.GetDatabase("baseprueba");
+            var database = client.GetDatabase("TallerBD2");
 
             return database;
         }
@@ -110,7 +110,10 @@ namespace baseprueba.modelos
             profesordb.InsertOne(profeingreso);
         }
 
+        //_----------------------------------------------------------------------//
         //////////////////////// consultas///////////////////////////////////
+        //------------------------------------------------------------------------------//
+
 
         // ---------------- devuelve las anotaciones de un alumno
         public String[] consulta_anotacion(IMongoDatabase database, String nombrealumno)
@@ -164,7 +167,7 @@ namespace baseprueba.modelos
                 {
                     if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
                     {
-                    valores[i] = alumno.nota + espacio + alumno.materia;    
+                    valores[i] = alumno.nota;    
                     i++;
                     }
                 }
@@ -287,7 +290,7 @@ namespace baseprueba.modelos
         //------------------------ funcion que consulta los datos de un alumno
         public String consuladatos(IMongoDatabase database, String nombrealumno)
         {
-            String datos ="";
+            String datos ="no esta";
 
             var consultadb = database.GetCollection<apoderado>("apoderado");
             var query = consultadb.AsQueryable<apoderado>();
@@ -307,6 +310,8 @@ namespace baseprueba.modelos
             //Console.WriteLine(datos);
             return datos;
         }
+
+
 
         /////////////////////------ funciones que verifican existencia/////////////////////////////////
         ///--------------------------------------------------------------------------------------/
@@ -385,7 +390,7 @@ namespace baseprueba.modelos
         }
 
 
-        public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
+       /* public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
         {
             var consultadb = database.GetCollection<apoderado>("apoderado");
             var query = consultadb.AsQueryable<apoderado>();
@@ -404,7 +409,7 @@ namespace baseprueba.modelos
             }
             
             return false ;
-        }
+        }*///   este metodo ya no se usa
 
     }
 }

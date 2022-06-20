@@ -524,41 +524,52 @@ namespace baseprueba
 
         private void boton_veraanotaciones_panelveranotaciones_Click(object sender, EventArgs e)
         {
+            textBox_resultados_anotaciones.Text = "";
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
-            if (unaconexion.existenciaanotacion(database, textBox_nombrealumno_ver_anotaciones.Text))
+            String[] anotaciones = unaconexion.consulta_anotacion(database, textBox_nombrealumno_ver_anotaciones.Text);
+            if (anotaciones.Length==0)
             {
-                String[] anotaciones = unaconexion.consulta_anotacion(database, textBox_nombrealumno_ver_anotaciones.Text);
-                foreach (var item in anotaciones)
-                {
-                    textBox_resultados_anotaciones.Text = textBox_resultados_anotaciones.Text + item+ "\r\n"+ "------------------------------------------------------------------------------------------------------------------------------" + "\r\n";
-                }
+                MessageBox.Show("No existe el alumno en los registros");
+                textBox_nombrealumno_ver_anotaciones.Text = "";
+                textBox_resultados_anotaciones.Text = "";
+
+
             }
             else
             {
-                MessageBox.Show("No existe el alumno en los registros");
-                textBox_nombre_alumno_ver_anotaciones.Text = "";
+                foreach (var item in anotaciones)
+                {
+                    textBox_resultados_anotaciones.Text = textBox_resultados_anotaciones.Text + item + "\r\n" + "------------------------------------------------------------------------------------------------------------------------" + "\r\n";
+                }
 
             }
+           // unaconexion.existenciaanotacion(database, textBox_nombrealumno_ver_anotaciones.Text
         }
+
+        //-------------------------- funcion que retorna datos del apoderado de un alumno
 
         private void button_consultardatos_Click(object sender, EventArgs e)
         {
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
-            if (unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text))
+            
+            if (unaconexion.consuladatos(database, textBox_nombreconsultadatos.Text).Equals("no esta"))
+            {
+                String respuesta = "fallo master no se encontro el datazo";
+                MessageBox.Show(respuesta);
+                textBox_nombreconsultadatos.Text = "";
+                textBox2.Text = "";
+
+            }
+            else
             {
                 String datos = unaconexion.consuladatos(database, textBox_nombreconsultadatos.Text);
                 textBox2.Text = datos;
             }
-            else
-            {
-                MessageBox.Show("No existe el alumno en los registros");
-                textBox_nombreconsultadatos.Text = "";
-            }
             
         }
-
+       // unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text)
 
     }
 }
