@@ -18,8 +18,22 @@ namespace baseprueba
         {
             /*conection conection=new conection();
             IMongoDatabase database = conection.conexion_Mongo();
-            conection.consuladatos(database, "jaimito");
-            */
+            String [][][]g=conection.consulta_promedio_general(database, "jose");
+            foreach (var item in g)
+            {
+                foreach (var x in item)
+                {
+                    Console.WriteLine("---------------------------");
+                    foreach (var y in x)
+                    {
+                        Console.WriteLine(y);
+                    }
+                }
+            }*/
+     
+            
+
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());  

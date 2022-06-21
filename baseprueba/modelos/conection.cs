@@ -18,7 +18,7 @@ namespace baseprueba.modelos
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var database = client.GetDatabase("TallerBD2");
+            var database = client.GetDatabase("baseprueba");
 
             return database;
         }
@@ -173,6 +173,19 @@ namespace baseprueba.modelos
                 }
             return valores;
         }
+
+        //--------//------------- consulta promedio general --------------//----------------//
+
+
+       
+
+
+
+
+
+
+
+
         //----------------Devuelve las notas en int para sacar promedio---------------------------------------
         public Double[] consulta_notas_promedio(IMongoDatabase database, String nombrealumno,
            String materia)

@@ -290,10 +290,41 @@ namespace baseprueba
             panel_agregarapoderado.Visible = false;
         }
 
+        private void button_ir_a_promedio_Click(object sender, EventArgs e)
+        {
+            panel_Login.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panel_agregarapoderado.Visible = false;
+            panel_agregaralumnos.Visible = false;
+            panel_consultadatos.Visible = false;
+            panel_promediogeneral.Visible = true;
+        }
 
 
-
-
+        private void button_volverproediogeneral_Click(object sender, EventArgs e)
+        {
+            textBox_nombrepromediogeneral.Text = "";
+            textBox_promediogeneral.Text = "";
+            textBox_mate.Text = "";
+            textBox_leng.Text = "";
+            textBox_histo.Text = "";
+            textBox_artes.Text = "";
+            panel_consultadatos.Visible = false;
+            panel_Login.Visible = false;
+            panel_nota.Visible = false;
+            panel_anotacion.Visible = false;
+            panel_Ver_asistencia.Visible = false;
+            panel_opciones_profesor.Visible = false;
+            panel_ver_anotaciones.Visible = false;
+            panelverNotas.Visible = true;
+            panel_agregarapoderado.Visible = false;
+            panel_promediogeneral.Visible = false;
+        }
 
 
 
@@ -569,7 +600,121 @@ namespace baseprueba
             }
             
         }
-       // unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text)
+
+        private void button_verpormediogeneral_Click(object sender, EventArgs e)
+        {
+            textBox_promediogeneral.Text = "";
+            textBox_mate.Text = "";
+            textBox_leng.Text = "";
+            textBox_histo.Text = "";
+            textBox_artes.Text = "";
+            conection unaConexion = new conection();
+            IMongoDatabase database = unaConexion.conexion_Mongo();
+            if (unaConexion.existenciaNotas(database, textBox_nombrepromediogeneral.Text))
+            {
+                //artes
+                String[] valores = unaConexion.consulta_notas(database, textBox_nombrepromediogeneral.Text, "Artes");
+                foreach (var item in valores)
+                {
+                    textBox_artes.Text = textBox_artes.Text + item + "\r\n";
+                }
+
+                Double[] notasart = unaConexion.consulta_notas_promedio(database, textBox_nombrepromediogeneral.Text, "Artes");
+                int contador = 0;
+                double suma = 0;
+                foreach (var item in notasart)
+                {
+                    suma = suma + item;
+                    contador++;
+                }   double promartes= Math.Round(suma / contador, 2);
+                textBox_artes.Text = textBox_artes.Text +"Promedio: "+ promartes + "\r\n";
+
+                //historia
+                String[] valores2 = unaConexion.consulta_notas(database, textBox_nombrepromediogeneral.Text, "Historia");
+                foreach (var item in valores2)
+                {
+                    textBox_histo.Text = textBox_histo.Text + item + "\r\n";
+                }
+
+                Double[] notash = unaConexion.consulta_notas_promedio(database, textBox_nombrepromediogeneral.Text, "Historia");
+                int contador2 = 0;
+                double suma2 = 0;
+                foreach (var item in notash)
+                {
+                    suma2 = suma2 + item;
+                    contador2++;
+                }
+                double promah = Math.Round(suma2 / contador2, 2);
+                textBox_histo.Text = textBox_histo.Text + "Promedio: " +promah + "\r\n";
+
+                //lenguaje
+                String[] valores3 = unaConexion.consulta_notas(database, textBox_nombrepromediogeneral.Text, "Lenguaje");
+                foreach (var item in valores3)
+                {
+                    textBox_leng.Text = textBox_leng.Text + item + "\r\n";
+                }
+
+                Double[] notasl = unaConexion.consulta_notas_promedio(database, textBox_nombrepromediogeneral.Text, "Lenguaje");
+                int contador3 = 0;
+                double suma3 = 0;
+                foreach (var item in notasl)
+                {
+                    suma3 = suma3 + item;
+                    contador3++;
+                }
+                double promal = Math.Round(suma3 / contador3, 2);
+                textBox_leng.Text = textBox_leng.Text + "Promedio: " + promal + "\r\n";
+
+
+                //matematica
+                String[] valores4 = unaConexion.consulta_notas(database, textBox_nombrepromediogeneral.Text, "Matematica");
+                foreach (var item in valores4)
+                {
+                    textBox_mate.Text = textBox_mate.Text + item + "\r\n";
+                }
+
+                Double[] notasm = unaConexion.consulta_notas_promedio(database, textBox_nombrepromediogeneral.Text, "Matematica");
+                int contador4 = 0;
+                double suma4 = 0;
+                foreach (var item in notasm)
+                {
+                    suma4 = suma4 + item;
+                    contador4++;
+                }
+                double promam = Math.Round(suma4 / contador4, 2);
+                textBox_mate.Text = textBox_mate.Text + "Promedio: " + promam + "\r\n";
+
+
+
+                textBox_promediogeneral.Text ="" + Math.Round((promam + promal + promah + promartes) / 4, 2);
+            }
+            else
+            {
+                if (ingresoMateriaVN.Text == "")
+                {
+                    MessageBox.Show("Existen campos vacios");
+                }
+                else
+                {
+                    MessageBox.Show("No existe el alumno en los registros");
+                    textBox_nombrepromediogeneral.Text = "";
+                    textBox_promediogeneral.Text = "";
+                    textBox_mate.Text = "";
+                    textBox_leng.Text = "";
+                    textBox_histo.Text = "";
+                    textBox_artes.Text = "";
+                }
+
+            }
+
+
+        }
+
 
     }
+    
+ 
+    // unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text)
+
+
 }
