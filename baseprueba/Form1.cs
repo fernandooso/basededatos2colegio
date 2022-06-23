@@ -298,6 +298,7 @@ namespace baseprueba
             panel_agregaralumnos.Visible = false;
             panel_consultadatos.Visible = false;
             panel_promediogeneral.Visible = true;
+            panel_promediogeneral.Visible = true;
         }
 
 
@@ -338,11 +339,21 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, comboBox2.Text, textBox_Nota.Text);
-                textBox_Nombre_Alumno_notas.Text = "";
-                
-                textBox_Nota.Text = "";
-                MessageBox.Show("se ingreso la nota correctamente");
+                if (unaconexon.existenciaalumno(database, textBox_nom_al_anotacion.Text) == true)
+                {
+                    unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, comboBox2.Text, textBox_Nota.Text);
+                    textBox_Nombre_Alumno_notas.Text = "";
+
+                    textBox_Nota.Text = "";
+                    MessageBox.Show("se ingreso la nota correctamente");
+                }else
+                {
+                    textBox_Nota.Text = "";
+                    MessageBox.Show("No se pudo ingresar la nota porque el alumno no existe");
+                }
+                    
+          
+                    
             }
 
         }
@@ -350,6 +361,7 @@ namespace baseprueba
 
         private void boton_ingresarasistencia_Click(object sender, EventArgs e)
         {
+            
             if (textBox_nombrealumasistencia.Text.Equals(""))
             {
                 MessageBox.Show("Por favor rellene todos los campos");
@@ -359,18 +371,29 @@ namespace baseprueba
                 String opcion = "";
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                if (rdsi.Checked)
+                if(unaconexon.existenciaalumno(database, textBox_nombrealumasistencia.Text) == true)
                 {
-                    opcion = "si";
+                    if (rdsi.Checked)
+                    {
+                        opcion = "si";
+                    }
+                    else
+                    {
+                        opcion = "no";
+                    }
+
+                    unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, opcion, DateTime.Now.ToString("dd-MM-yyyy"));
+                    textBox_nombrealumasistencia.Text = "";
+                    MessageBox.Show("se ingreso la asistencia correctamente");
                 }
                 else
                 {
-                    opcion = "no";
+                    textBox_nombrealumasistencia.Text = "";
+                    MessageBox.Show("No se puede ingresar asistencia porque el alumno no existe");
                 }
+                   
+              
 
-                unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, opcion, DateTime.Now.ToString("dd-MM-yyyy"));
-                textBox_nombrealumasistencia.Text = "";
-                MessageBox.Show("se ingreso la asistencia correctamente");
             }
         }
 
@@ -386,22 +409,36 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                String tipo = "";
-                if (rdpositiva.Checked)
+                if(unaconexon.existenciaalumno(database, textBox_nom_al_anotacion.Text) == true)
                 {
-                    tipo = "positiva";
+                    String tipo = "";
+                    if (rdpositiva.Checked)
+                    {
+                        tipo = "positiva";
+                    }
+                    else
+                    {
+                        tipo = "negativa";
+                    }
+                    unaconexon.agrega_anotacion(database, textBox_nom_al_anotacion.Text, textBox_anotacion.Text,
+                        tipo, "no aplica", DateTime.Now.ToString("dd-MM-yyyy"));
+
+                    textBox_anotacion.Text = "";
+                    textBox_nom_al_anotacion.Text = "";
+
+                    MessageBox.Show("se ingreso la anotacion correctamente");
                 }
                 else
                 {
-                    tipo = "negativa";
-                }
-                unaconexon.agrega_anotacion(database, textBox_nom_al_anotacion.Text, textBox_anotacion.Text,
-                    tipo, "no aplica", DateTime.Now.ToString("dd-MM-yyyy"));
+                    textBox_anotacion.Text = "";
+                    textBox_nom_al_anotacion.Text = "";
 
-                textBox_anotacion.Text = "";
-                textBox_nom_al_anotacion.Text = "";
+                    MessageBox.Show("No se puede ingresar la anotacion porque el alumno no existe");
+                }
+                   
                 
-                MessageBox.Show("se ingreso la anotacion correctamente");
+              
+
             }
         }
 

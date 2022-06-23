@@ -401,26 +401,41 @@ namespace baseprueba.modelos
         }
 
 
-       /* public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
-        {
-            var consultadb = database.GetCollection<apoderado>("apoderado");
-            var query = consultadb.AsQueryable<apoderado>();
-            int cont = 0;
-            foreach (var alumno in query)
-            {
-                foreach (var item in alumno.datosalumno)
-                {
-                    if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
-                    {
-                        return true;
+        public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
+         {
+             var consultadb = database.GetCollection<apoderado>("apoderado");
+             var query = consultadb.AsQueryable<apoderado>();
+             int cont = 0;
+             int op = 0;
+             foreach (var alumno in query)
+             {
+                 foreach (var item in alumno.datosalumno)
+                 {
+                     if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
+                     {
+                         op=1;
                     }
-                    cont++;
-                }
-                cont = 0;
+                    else
+                    {
+                        
+                    }
+                     cont++;
+                    
+                 }
+                 cont = 0;
+             }
+            if (op == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
             
-            return false ;
-        }*///   este metodo ya no se usa
+         }
 
+        
+     
     }
 }
