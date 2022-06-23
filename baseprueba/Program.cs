@@ -16,20 +16,7 @@ namespace baseprueba
         [STAThread]
         private static void Main()
         {
-            /*conection conection=new conection();
-            IMongoDatabase database = conection.conexion_Mongo();
-            String [][][]g=conection.consulta_promedio_general(database, "jose");
-            foreach (var item in g)
-            {
-                foreach (var x in item)
-                {
-                    Console.WriteLine("---------------------------");
-                    foreach (var y in x)
-                    {
-                        Console.WriteLine(y);
-                    }
-                }
-            }*/
+            
      
             
 

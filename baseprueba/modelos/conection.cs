@@ -18,7 +18,7 @@ namespace baseprueba.modelos
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mongouser:mongouser@taller2bd2.cpnky.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var database = client.GetDatabase("baseprueba");
+            var database = client.GetDatabase("TallerBD2");
 
             return database;
         }
@@ -149,7 +149,6 @@ namespace baseprueba.modelos
             String materia)
         {
             int contador = 0;
-            String espacio = " ";
             var consultadb = database.GetCollection<notas>("notas");
 
             var query = consultadb.AsQueryable<notas>();
@@ -191,7 +190,6 @@ namespace baseprueba.modelos
            String materia)
         {
             int contador = 0;
-            String espacio = " ";
             var consultadb = database.GetCollection<notas>("notas");
 
             var query = consultadb.AsQueryable<notas>();

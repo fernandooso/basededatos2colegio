@@ -37,6 +37,8 @@ namespace baseprueba
             else
             {
                 MessageBox.Show("Usuario o Contraseña incorrecto");
+                textBox_Usuario_login.Text = "";
+                textBox_contraseña_login.Text = "";
             }
             
         }
@@ -65,7 +67,6 @@ namespace baseprueba
         private void button9_Click(object sender, EventArgs e)
         {
             textBox_Nombre_Alumno_notas.Text = "";
-            textBox_Materia_panelnotas.Text = "";
             textBox_Nota.Text = "";
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = true;
@@ -79,10 +80,6 @@ namespace baseprueba
 
             textBox_nom_al_anotacion.Text = "";
             textBox_anotacion.Text = "";
-            textBox_tipoanotacion.Text = "";
-            textBox_fechaanotacion.Text = "";
-            textBox_materianotacion.Text = "";
-
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = true;
             panel_nota.Visible = false;
@@ -113,8 +110,7 @@ namespace baseprueba
         private void button4_Click_1(object sender, EventArgs e)
         {
             textBox_nombrealumasistencia.Text = "";
-            textBox_ingreso_fechaasistencia.Text = "";
-            textBox_ingresoasistencia.Text = "";
+            
             panel_Asistencia.Visible=false;
             panel_Login.Visible = false;
             panel_opciones_profesor.Visible = false;
@@ -189,7 +185,6 @@ namespace baseprueba
             textBoxIngresoNombreVN.Text = "";
             textBoxResultadoVN.Text = "";
             textBox_primedio.Text = "";
-            ingresoMateriaVN.Text = "";
             panel_Login.Visible = false;
             panel_nota.Visible = false;
             panel_anotacion.Visible = false;
@@ -335,7 +330,7 @@ namespace baseprueba
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (textBox_Nombre_Alumno_notas.Text.Equals("") || textBox_Materia_panelnotas.Text.Equals("") || textBox_Nota.Text.Equals(""))
+            if (textBox_Nombre_Alumno_notas.Text.Equals("") || comboBox2.Text=="Materias" || textBox_Nota.Text.Equals(""))
             {
                 MessageBox.Show("Por favor rellene todos los campos");
             }
@@ -343,9 +338,9 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, textBox_Materia_panelnotas.Text, textBox_Nota.Text);
+                unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, comboBox2.Text, textBox_Nota.Text);
                 textBox_Nombre_Alumno_notas.Text = "";
-                textBox_Materia_panelnotas.Text = "";
+                
                 textBox_Nota.Text = "";
                 MessageBox.Show("se ingreso la nota correctamente");
             }
@@ -355,18 +350,26 @@ namespace baseprueba
 
         private void boton_ingresarasistencia_Click(object sender, EventArgs e)
         {
-            if (textBox_nombrealumasistencia.Text.Equals("") || textBox_ingreso_fechaasistencia.Text.Equals("") || textBox_ingresoasistencia.Text.Equals(""))
+            if (textBox_nombrealumasistencia.Text.Equals(""))
             {
                 MessageBox.Show("Por favor rellene todos los campos");
             }
             else
             {
+                String opcion = "";
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, textBox_ingresoasistencia.Text, textBox_ingreso_fechaasistencia.Text);
+                if (rdsi.Checked)
+                {
+                    opcion = "si";
+                }
+                else
+                {
+                    opcion = "no";
+                }
+
+                unaconexon.agrega_asistencia(database, textBox_nombrealumasistencia.Text, opcion, DateTime.Now.ToString("dd-MM-yyyy"));
                 textBox_nombrealumasistencia.Text = "";
-                textBox_ingreso_fechaasistencia.Text = "";
-                textBox_ingresoasistencia.Text = "";
                 MessageBox.Show("se ingreso la asistencia correctamente");
             }
         }
@@ -375,7 +378,7 @@ namespace baseprueba
         private void boton_ingresaanotacion_Click(object sender, EventArgs e)
         {
             if (textBox_nom_al_anotacion.Text.Equals("") || textBox_anotacion.Text.Equals("")
-                || textBox_fechaanotacion.Text.Equals("") || textBox_materianotacion.Text.Equals("") || textBox_tipoanotacion.Text.Equals(""))
+               )
             {
                 MessageBox.Show("Por favor rellene todos los campos");
             }
@@ -383,14 +386,21 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
+                String tipo = "";
+                if (rdpositiva.Checked)
+                {
+                    tipo = "positiva";
+                }
+                else
+                {
+                    tipo = "negativa";
+                }
                 unaconexon.agrega_anotacion(database, textBox_nom_al_anotacion.Text, textBox_anotacion.Text,
-                    textBox_tipoanotacion.Text, textBox_materianotacion.Text, textBox_fechaanotacion.Text);
+                    tipo, "no aplica", DateTime.Now.ToString("dd-MM-yyyy"));
 
                 textBox_anotacion.Text = "";
                 textBox_nom_al_anotacion.Text = "";
-                textBox_fechaanotacion.Text = "";
-                textBox_tipoanotacion.Text = "";
-                textBox_materianotacion.Text = "";
+                
                 MessageBox.Show("se ingreso la anotacion correctamente");
             }
         }
@@ -425,6 +435,7 @@ namespace baseprueba
                     textBox_ingresonombrealumno_panelingreso.Text = "";
                     textBox_ingresorutalumno_panleingreso.Text = "";
                     textBox_ingresofnacalumno_panelingreso.Text = "";
+                    MessageBox.Show("se ingreso correctamente");
                 }
 
             }
@@ -451,6 +462,7 @@ namespace baseprueba
                     textBox_nombrealumno_panelalumnos.Text = "";
                     textBox_rutalumno_panelalumnos.Text = "";
                     textBox_rutap_alumnos.Text = "";
+                    MessageBox.Show("se ingreso correctamente");
                 }
 
             }
@@ -505,15 +517,16 @@ namespace baseprueba
             textBoxResultadoVN.Text = "";
             conection unaConexion = new conection();
             IMongoDatabase database = unaConexion.conexion_Mongo();
-            if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)==true && ingresoMateriaVN.Text!="")
+           // Console.WriteLine(comboBox1.Text);
+            if (unaConexion.existenciaNotas(database, textBoxIngresoNombreVN.Text)==true && comboBox1.Text != "Materias")
             {
-                String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
+                String[] valores = unaConexion.consulta_notas(database, textBoxIngresoNombreVN.Text, comboBox1.Text);
                 foreach (var item in valores)
                 {
                     textBoxResultadoVN.Text= textBoxResultadoVN.Text+item+ "\r\n";
                 }
 
-                Double[] notas = unaConexion.consulta_notas_promedio(database, textBoxIngresoNombreVN.Text, ingresoMateriaVN.Text);
+                Double[] notas = unaConexion.consulta_notas_promedio(database, textBoxIngresoNombreVN.Text, comboBox1.Text);
                 int contador = 0;
                 foreach (var item in notas)
                 {
@@ -526,7 +539,7 @@ namespace baseprueba
                 }
                 if (suma==0)
                 {
-                    MessageBox.Show("El alumno no tiene notas en esta materia: "+ ingresoMateriaVN.Text);
+                    MessageBox.Show("El alumno no tiene notas en esta materia: "+ comboBox1.Text);
                 }
                 else
                 {
@@ -536,15 +549,15 @@ namespace baseprueba
             }
             else
             {
-                if (ingresoMateriaVN.Text == "")
+                if (comboBox1.Text == "Materias")
                 {
-                    MessageBox.Show("Existen campos vacios");
+                    MessageBox.Show("Por favor selccione una materia");
                 }
                 else
                 {
                     MessageBox.Show("No existe el alumno en los registros");
                     textBoxIngresoNombreVN.Text = "";
-                    ingresoMateriaVN.Text = "";
+                    
                 }
                
             }
@@ -587,7 +600,7 @@ namespace baseprueba
             
             if (unaconexion.consuladatos(database, textBox_nombreconsultadatos.Text).Equals("no esta"))
             {
-                String respuesta = "fallo master no se encontro el datazo";
+                String respuesta = "No existe el alumno en los registros";
                 MessageBox.Show(respuesta);
                 textBox_nombreconsultadatos.Text = "";
                 textBox2.Text = "";
@@ -690,7 +703,7 @@ namespace baseprueba
             }
             else
             {
-                if (ingresoMateriaVN.Text == "")
+                if (textBox_nombrepromediogeneral.Text == "")
                 {
                     MessageBox.Show("Existen campos vacios");
                 }
@@ -713,8 +726,5 @@ namespace baseprueba
 
     }
     
- 
-    // unaconexion.existenciaalumno(database, textBox_nombreconsultadatos.Text)
-
 
 }
