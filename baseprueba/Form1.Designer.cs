@@ -260,10 +260,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel_promediogeneral);
-            this.panel3.Controls.Add(this.panel_Ver_asistencia);
-            this.panel3.Controls.Add(this.panel_Asistencia);
-            this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Controls.Add(this.panel_nota);
             this.panel3.Controls.Add(this.panel_Login);
             this.panel3.Controls.Add(this.panelverNotas);
@@ -272,6 +268,10 @@
             this.panel3.Controls.Add(this.panel_agregarapoderado);
             this.panel3.Controls.Add(this.panel_consultadatos);
             this.panel3.Controls.Add(this.panel_opciones_profesor);
+            this.panel3.Controls.Add(this.panel_promediogeneral);
+            this.panel3.Controls.Add(this.panel_Ver_asistencia);
+            this.panel3.Controls.Add(this.panel_Asistencia);
+            this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";

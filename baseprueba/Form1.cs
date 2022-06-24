@@ -339,18 +339,18 @@ namespace baseprueba
             {
                 conection unaconexon = new conection();
                 IMongoDatabase database = unaconexon.conexion_Mongo();
-                if (unaconexon.existenciaalumno(database, textBox_nom_al_anotacion.Text) == true)
+               if (unaconexon.existenciaalumno(database, textBox_Nombre_Alumno_notas.Text) == true)
                 {
                     unaconexon.agrega_notas(database, textBox_Nombre_Alumno_notas.Text, comboBox2.Text, textBox_Nota.Text);
                     textBox_Nombre_Alumno_notas.Text = "";
-
                     textBox_Nota.Text = "";
                     MessageBox.Show("se ingreso la nota correctamente");
-                }else
-                {
+               }else
+               {
                     textBox_Nota.Text = "";
+                    textBox_Nombre_Alumno_notas.Text = "";
                     MessageBox.Show("No se pudo ingresar la nota porque el alumno no existe");
-                }
+               }
                     
           
                     

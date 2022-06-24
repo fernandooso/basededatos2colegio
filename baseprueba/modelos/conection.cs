@@ -407,12 +407,13 @@ namespace baseprueba.modelos
              var query = consultadb.AsQueryable<apoderado>();
              int cont = 0;
              int op = 0;
-             foreach (var alumno in query)
+             foreach (var apoderado in query)
              {
-                 foreach (var item in alumno.datosalumno)
+                 foreach (var item in apoderado.datosalumno)
                  {
-                     if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
+                     if (nombrealumno == apoderado.datosalumno[cont].nombre_alumno)
                      {
+                        Console.WriteLine(item);
                          op=1;
                     }
                     else
