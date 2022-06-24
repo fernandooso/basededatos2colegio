@@ -650,8 +650,13 @@ namespace baseprueba
             }
             else
             {
+                String datos2 = unaconexion.consuladatosal(database, textBox_nombreconsultadatos.Text);
+                textBox2.Text = textBox2.Text + datos2;
+                textBox2.Text = textBox2.Text + "\r\n" + "-----------------------------------------------------------------------------------" + "\r\n"+"\r\n";
                 String datos = unaconexion.consuladatos(database, textBox_nombreconsultadatos.Text);
-                textBox2.Text = datos;
+                textBox2.Text = textBox2.Text+datos;
+                
+                
             }
             
         }

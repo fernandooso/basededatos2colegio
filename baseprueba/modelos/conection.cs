@@ -326,7 +326,28 @@ namespace baseprueba.modelos
             //Console.WriteLine(datos);
             return datos;
         }
+        public String consuladatosal(IMongoDatabase database, String nombrealumno)
+        {
+            String datos = "no esta";
 
+            var consultadb = database.GetCollection<apoderado>("apoderado");
+            var query = consultadb.AsQueryable<apoderado>();
+            int cont = 0;
+            foreach (var alumno in query)
+            {
+                foreach (var item in alumno.datosalumno)
+                {
+                    if (nombrealumno == alumno.datosalumno[cont].rut_alumno)
+                    {
+                        datos = "Nombre alumno: " + alumno.datosalumno[cont].nombre_alumno + "\r\n" ;
+                    }
+                    cont++;
+                }
+                cont = 0;
+            }
+            //Console.WriteLine(datos);
+            return datos;
+        }
 
 
         /////////////////////------ funciones que verifican existencia/////////////////////////////////
