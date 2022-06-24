@@ -18,5 +18,7 @@ namespace baseprueba.modelos
         public string materia { get; set; }
         [BsonElement("nota")]
         public string nota { get; set; }
+        [BsonElement("rut")]
+        public string rut { get; set; }
     }
 }

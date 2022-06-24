@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel_nota = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox_Nota = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_Nombre_Alumno_notas = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.boton_ingresarnotas = new System.Windows.Forms.Button();
-            this.button_volver_nota = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel_Login = new System.Windows.Forms.Panel();
             this.textBox_contraseña_login = new System.Windows.Forms.TextBox();
             this.buttoningresaralmenu = new System.Windows.Forms.Button();
@@ -210,10 +198,19 @@
             this.button_volver_anotacion = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.panel_nota = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox_Nota = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_Nombre_Alumno_notas = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.boton_ingresarnotas = new System.Windows.Forms.Button();
+            this.button_volver_nota = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
-            this.panel_nota.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -256,15 +253,13 @@
             this.panel_anotacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel_nota.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel_Login);
-            this.panel3.Controls.Add(this.panelverNotas);
-            this.panel3.Controls.Add(this.panel_ver_anotaciones);
-            this.panel3.Controls.Add(this.panel_agregaralumnos);
-            this.panel3.Controls.Add(this.panel_agregarapoderado);
             this.panel3.Controls.Add(this.panel_consultadatos);
             this.panel3.Controls.Add(this.panel_opciones_profesor);
             this.panel3.Controls.Add(this.panel_promediogeneral);
@@ -272,133 +267,16 @@
             this.panel3.Controls.Add(this.panel_Asistencia);
             this.panel3.Controls.Add(this.panel_anotacion);
             this.panel3.Controls.Add(this.panel_nota);
+            this.panel3.Controls.Add(this.panel_Login);
+            this.panel3.Controls.Add(this.panelverNotas);
+            this.panel3.Controls.Add(this.panel_ver_anotaciones);
+            this.panel3.Controls.Add(this.panel_agregaralumnos);
+            this.panel3.Controls.Add(this.panel_agregarapoderado);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(809, 699);
             this.panel3.TabIndex = 10;
-            // 
-            // panel_nota
-            // 
-            this.panel_nota.Controls.Add(this.comboBox2);
-            this.panel_nota.Controls.Add(this.label26);
-            this.panel_nota.Controls.Add(this.textBox_Nota);
-            this.panel_nota.Controls.Add(this.label6);
-            this.panel_nota.Controls.Add(this.label5);
-            this.panel_nota.Controls.Add(this.textBox_Nombre_Alumno_notas);
-            this.panel_nota.Controls.Add(this.label4);
-            this.panel_nota.Controls.Add(this.boton_ingresarnotas);
-            this.panel_nota.Controls.Add(this.button_volver_nota);
-            this.panel_nota.Controls.Add(this.pictureBox5);
-            this.panel_nota.Controls.Add(this.pictureBox6);
-            this.panel_nota.Location = new System.Drawing.Point(0, 0);
-            this.panel_nota.Name = "panel_nota";
-            this.panel_nota.Size = new System.Drawing.Size(811, 700);
-            this.panel_nota.TabIndex = 11;
-            this.panel_nota.Visible = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Artes",
-            "Lenguaje",
-            "Historia",
-            "Matematica"});
-            this.comboBox2.Location = new System.Drawing.Point(301, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 27;
-            this.comboBox2.Text = "Materias";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(298, 23);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(88, 13);
-            this.label26.TabIndex = 18;
-            this.label26.Text = "Ingreso de Notas";
-            // 
-            // textBox_Nota
-            // 
-            this.textBox_Nota.Location = new System.Drawing.Point(297, 192);
-            this.textBox_Nota.Name = "textBox_Nota";
-            this.textBox_Nota.Size = new System.Drawing.Size(222, 20);
-            this.textBox_Nota.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Ingrese la Nota del Alumno";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Ingrese la Materia";
-            // 
-            // textBox_Nombre_Alumno_notas
-            // 
-            this.textBox_Nombre_Alumno_notas.Location = new System.Drawing.Point(297, 85);
-            this.textBox_Nombre_Alumno_notas.Name = "textBox_Nombre_Alumno_notas";
-            this.textBox_Nombre_Alumno_notas.Size = new System.Drawing.Size(222, 20);
-            this.textBox_Nombre_Alumno_notas.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Ingrese el Rut del Alumno";
-            // 
-            // boton_ingresarnotas
-            // 
-            this.boton_ingresarnotas.Location = new System.Drawing.Point(297, 611);
-            this.boton_ingresarnotas.Name = "boton_ingresarnotas";
-            this.boton_ingresarnotas.Size = new System.Drawing.Size(170, 48);
-            this.boton_ingresarnotas.TabIndex = 8;
-            this.boton_ingresarnotas.Text = "Ingresar Nota";
-            this.boton_ingresarnotas.UseVisualStyleBackColor = true;
-            this.boton_ingresarnotas.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button_volver_nota
-            // 
-            this.button_volver_nota.Location = new System.Drawing.Point(40, 611);
-            this.button_volver_nota.Name = "button_volver_nota";
-            this.button_volver_nota.Size = new System.Drawing.Size(170, 48);
-            this.button_volver_nota.TabIndex = 7;
-            this.button_volver_nota.Text = "Volver";
-            this.button_volver_nota.UseVisualStyleBackColor = true;
-            this.button_volver_nota.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox5.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(61, 700);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::baseprueba.Properties.Resources.azul;
-            this.pictureBox6.Location = new System.Drawing.Point(464, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(350, 700);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
             // 
             // panel_Login
             // 
@@ -1170,11 +1048,11 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(266, 37);
+            this.label41.Location = new System.Drawing.Point(221, 36);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(117, 13);
+            this.label41.Size = new System.Drawing.Size(231, 13);
             this.label41.TabIndex = 20;
-            this.label41.Text = "Consultar datos alumno";
+            this.label41.Text = "Consultar datos de contacto y datos del alumno";
             // 
             // textBox2
             // 
@@ -1185,6 +1063,7 @@
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(353, 240);
             this.textBox2.TabIndex = 17;
+
             // 
             // textBox_nombreconsultadatos
             // 
@@ -2084,6 +1963,128 @@
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             // 
+            // panel_nota
+            // 
+            this.panel_nota.Controls.Add(this.comboBox2);
+            this.panel_nota.Controls.Add(this.label26);
+            this.panel_nota.Controls.Add(this.textBox_Nota);
+            this.panel_nota.Controls.Add(this.label6);
+            this.panel_nota.Controls.Add(this.label5);
+            this.panel_nota.Controls.Add(this.textBox_Nombre_Alumno_notas);
+            this.panel_nota.Controls.Add(this.label4);
+            this.panel_nota.Controls.Add(this.boton_ingresarnotas);
+            this.panel_nota.Controls.Add(this.button_volver_nota);
+            this.panel_nota.Controls.Add(this.pictureBox5);
+            this.panel_nota.Controls.Add(this.pictureBox6);
+            this.panel_nota.Location = new System.Drawing.Point(0, 0);
+            this.panel_nota.Name = "panel_nota";
+            this.panel_nota.Size = new System.Drawing.Size(811, 700);
+            this.panel_nota.TabIndex = 11;
+            this.panel_nota.Visible = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Artes",
+            "Lenguaje",
+            "Historia",
+            "Matematica"});
+            this.comboBox2.Location = new System.Drawing.Point(301, 133);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 27;
+            this.comboBox2.Text = "Materias";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(298, 23);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(88, 13);
+            this.label26.TabIndex = 18;
+            this.label26.Text = "Ingreso de Notas";
+            // 
+            // textBox_Nota
+            // 
+            this.textBox_Nota.Location = new System.Drawing.Point(297, 192);
+            this.textBox_Nota.Name = "textBox_Nota";
+            this.textBox_Nota.Size = new System.Drawing.Size(222, 20);
+            this.textBox_Nota.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(70, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Ingrese la Nota del Alumno";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(70, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Ingrese la Materia";
+            // 
+            // textBox_Nombre_Alumno_notas
+            // 
+            this.textBox_Nombre_Alumno_notas.Location = new System.Drawing.Point(297, 85);
+            this.textBox_Nombre_Alumno_notas.Name = "textBox_Nombre_Alumno_notas";
+            this.textBox_Nombre_Alumno_notas.Size = new System.Drawing.Size(222, 20);
+            this.textBox_Nombre_Alumno_notas.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(70, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Ingrese el Rut del Alumno";
+            // 
+            // boton_ingresarnotas
+            // 
+            this.boton_ingresarnotas.Location = new System.Drawing.Point(297, 611);
+            this.boton_ingresarnotas.Name = "boton_ingresarnotas";
+            this.boton_ingresarnotas.Size = new System.Drawing.Size(170, 48);
+            this.boton_ingresarnotas.TabIndex = 8;
+            this.boton_ingresarnotas.Text = "Ingresar Nota";
+            this.boton_ingresarnotas.UseVisualStyleBackColor = true;
+            this.boton_ingresarnotas.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button_volver_nota
+            // 
+            this.button_volver_nota.Location = new System.Drawing.Point(40, 611);
+            this.button_volver_nota.Name = "button_volver_nota";
+            this.button_volver_nota.Size = new System.Drawing.Size(170, 48);
+            this.button_volver_nota.TabIndex = 7;
+            this.button_volver_nota.Text = "Volver";
+            this.button_volver_nota.UseVisualStyleBackColor = true;
+            this.button_volver_nota.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::baseprueba.Properties.Resources.azul;
+            this.pictureBox5.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(61, 700);
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::baseprueba.Properties.Resources.azul;
+            this.pictureBox6.Location = new System.Drawing.Point(464, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(350, 700);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2094,10 +2095,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
-            this.panel_nota.ResumeLayout(false);
-            this.panel_nota.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -2154,6 +2151,10 @@
             this.panel_anotacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel_nota.ResumeLayout(false);
+            this.panel_nota.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -22,5 +22,7 @@ namespace baseprueba.modelos
         public string materia { get; set; }
         [BsonElement("fecha")]
         public string fecha { get; set; }
+        [BsonElement("rut")]
+        public string rut { get; set; }
     }
 }

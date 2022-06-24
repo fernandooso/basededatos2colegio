@@ -18,6 +18,8 @@ namespace baseprueba.modelos
         public string asistencia { get; set; }
         [BsonElement("fecha")]
         public string fecha { get; set; }
-        
+        [BsonElement("rut")]
+        public string rut { get; set; }
+
     }
 }

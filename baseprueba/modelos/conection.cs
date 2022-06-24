@@ -52,8 +52,8 @@ namespace baseprueba.modelos
             var result = collection.UpdateOne(filter, update);
         }
         //----------------------- metodo que agrga anotaciones------------------------------
-        public void agrega_anotacion(IMongoDatabase database,String nomal,
-            String comentario, String tipo,String materia, String fechano)
+        public void agrega_anotacion(IMongoDatabase database,String rut,
+            String comentario, String tipo,String materia, String fechano,String nomal)
         {
             var anotaciondb = database.GetCollection<anotacion>("anotacion");
             var anotacioningreso = new anotacion()
@@ -62,33 +62,38 @@ namespace baseprueba.modelos
                 tipo = tipo,
                 materia = materia,
                 fecha = fechano,
-                nombre_alumno = nomal
+                nombre_alumno = nomal,
+                rut=rut
             };
             anotaciondb.InsertOne(anotacioningreso);
         }
         //----------------------------------- metodo que agrega asistencia -------------------
-        public void agrega_asistencia(IMongoDatabase database,String nombre_alumno,
-            String asistenciaa, String fecha)
+        public void agrega_asistencia(IMongoDatabase database,String rut,
+            String asistenciaa, String fecha,String nombre)
         {
             var asistenciandb = database.GetCollection<Asistencia>("asistencia");
             var asistenciaingreso = new Asistencia()
             {
                 asistencia = asistenciaa,
                 fecha=fecha,
-                nombre_alumno=nombre_alumno
+                nombre_alumno=nombre,
+                rut=rut
+
             };
             asistenciandb.InsertOne(asistenciaingreso);
         }
         //----------------------------------- metodo que agrega notas ----------------------
-        public void agrega_notas(IMongoDatabase database, String nombre_alumno, String materia,
-            String nota)
+        public void agrega_notas(IMongoDatabase database, String rut, String materia,
+            String nota,String nombre)
         {
             var notasdb = database.GetCollection<notas>("notas");
             var notaingreso = new notas()
             {
                 materia = materia,
-                nombre_alumno = nombre_alumno,
-                nota = nota
+                nombre_alumno = nombre,
+                nota = nota,
+                rut = rut
+                
             };
             notasdb.InsertOne(notaingreso);
         }
@@ -125,7 +130,7 @@ namespace baseprueba.modelos
 
             foreach (var anotado in query)
                 {
-                    if (nombrealumno == anotado.nombre_alumno)
+                    if (nombrealumno == anotado.rut)
                     {
                     cont++;
                     }
@@ -134,7 +139,7 @@ namespace baseprueba.modelos
             int i = 0;
             foreach (var anotado in query)
             {
-                if (nombrealumno == anotado.nombre_alumno)
+                if (nombrealumno == anotado.rut)
                 {
                     anotaciones[i] ="Tipo: "+anotado.tipo+": "+anotado.comentario+espacio+"Fecha: "+anotado.fecha;
                     i++;
@@ -154,7 +159,7 @@ namespace baseprueba.modelos
             var query = consultadb.AsQueryable<notas>();
             foreach (var alumno in query)
             {
-                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                if (nombrealumno == alumno.rut && materia == alumno.materia)
                 {
                     contador++;
                 }
@@ -164,7 +169,7 @@ namespace baseprueba.modelos
             int i = 0;
             foreach (var alumno in query)
                 {
-                    if (nombrealumno == alumno.nombre_alumno && materia== alumno.materia)
+                    if (nombrealumno == alumno.rut && materia== alumno.materia)
                     {
                     valores[i] = alumno.nota;    
                     i++;
@@ -195,7 +200,7 @@ namespace baseprueba.modelos
             var query = consultadb.AsQueryable<notas>();
             foreach (var alumno in query)
             {
-                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                if (nombrealumno == alumno.rut && materia == alumno.materia)
                 {
                     contador++;
                 }
@@ -205,7 +210,7 @@ namespace baseprueba.modelos
             int i = 0;
             foreach (var alumno in query)
             {
-                if (nombrealumno == alumno.nombre_alumno && materia == alumno.materia)
+                if (nombrealumno == alumno.rut && materia == alumno.materia)
                 {
                     notas[i] = Convert.ToDouble(alumno.nota);
                     i++;
@@ -224,7 +229,7 @@ namespace baseprueba.modelos
                 var query = consultadb.AsQueryable<Asistencia>();
                 foreach (var alumno in query)
                 {
-                    if (nombrealumno == alumno.nombre_alumno && alumno.asistencia=="si")
+                    if (nombrealumno == alumno.rut && alumno.asistencia=="si")
                     {
                        
                       
@@ -261,7 +266,7 @@ namespace baseprueba.modelos
                 var query = consultadb.AsQueryable<Asistencia>();
                 foreach (var alumno in query)
                 {
-                    if (nombrealumno == alumno.nombre_alumno)
+                    if (nombrealumno == alumno.rut)
                     {
 
                         
@@ -280,7 +285,7 @@ namespace baseprueba.modelos
             var query = consultadb.AsQueryable<Asistencia>();
             foreach (var alumno in query)
             {
-                if (nombrealumno == alumno.nombre_alumno)
+                if (nombrealumno == alumno.rut)
                 {
                     i++;
 
@@ -290,7 +295,7 @@ namespace baseprueba.modelos
             int cont = 0;
             foreach (var alumno in query)
             {
-                if (nombrealumno == alumno.nombre_alumno)
+                if (nombrealumno == alumno.rut)
                 {
                     asistencia[cont] = alumno.fecha + ": " + alumno.asistencia;
                     cont++;
@@ -310,7 +315,7 @@ namespace baseprueba.modelos
             {
                 foreach (var item in alumno.datosalumno)
                 {
-                    if (nombrealumno == alumno.datosalumno[cont].nombre_alumno)
+                    if (nombrealumno == alumno.datosalumno[cont].rut_alumno)
                     {
                         datos = "Nombre apoderado: " + alumno.nombre_completo + "\r\n" + "Telefono apoderado: " + alumno.telefono + "\r\n" + "Direccion: " + alumno.direccion;
                     }
@@ -331,7 +336,7 @@ namespace baseprueba.modelos
         public bool existenciaasistencia(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<Asistencia>("asistencia");
-            if (consultadb.AsQueryable<Asistencia>().Any(c => c.nombre_alumno == nombreabuscar))
+            if (consultadb.AsQueryable<Asistencia>().Any(c => c.rut == nombreabuscar))
             {
                 return true;
             }
@@ -347,7 +352,7 @@ namespace baseprueba.modelos
         public bool existenciaNotas(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<notas>("notas");
-            if (consultadb.AsQueryable<notas>().Any(c => c.nombre_alumno == nombreabuscar))
+            if (consultadb.AsQueryable<notas>().Any(c => c.rut == nombreabuscar))
             {
                 return true;
             }
@@ -362,7 +367,7 @@ namespace baseprueba.modelos
         public bool existenciaanotacion(IMongoDatabase database, String nombreabuscar)
         {
             var consultadb = database.GetCollection<anotacion>("anotacion");
-            if (consultadb.AsQueryable<anotacion>().Any(c => c.nombre_alumno == nombreabuscar))
+            if (consultadb.AsQueryable<anotacion>().Any(c => c.rut == nombreabuscar))
             {
                 return true;
             }
@@ -400,39 +405,27 @@ namespace baseprueba.modelos
             }
         }
 
-
-        public bool existenciaalumno(IMongoDatabase database, String nombrealumno)
+        //verfica si el alumno existe en apodersdo y retrona el nombre
+        public String existenciaalumno(IMongoDatabase database, String nombrealumno)
          {
              var consultadb = database.GetCollection<apoderado>("apoderado");
              var query = consultadb.AsQueryable<apoderado>();
              int cont = 0;
-             int op = 0;
+            String nombre = "";
              foreach (var apoderado in query)
              {
                  foreach (var item in apoderado.datosalumno)
                  {
-                     if (nombrealumno == apoderado.datosalumno[cont].nombre_alumno)
+                     if (nombrealumno == apoderado.datosalumno[cont].rut_alumno)
                      {
-                        Console.WriteLine(item);
-                         op=1;
-                    }
-                    else
-                    {
-                        
-                    }
+                        nombre=apoderado.datosalumno[cont].nombre_alumno;
+                    }   
                      cont++;
                     
                  }
                  cont = 0;
              }
-            if (op == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return nombre;
             
          }
 
