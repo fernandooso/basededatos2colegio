@@ -458,7 +458,7 @@ namespace baseprueba
             {
                 if (textBox_ingresodireccionapoderado.Text.Equals("") || textBox_ingresarnombreapoderado.Text.Equals("") || textBox_ingresotelefonoapoderdao.Text.Equals("") ||
                textBox_ingresofechadenacimientoapoderado.Text.Equals("") || textBox_ingresorutapoderado.Text.Equals("") ||
-               textBox_ingresonombrealumno_panelingreso.Text.Equals("") || textBox_ingresorutalumno_panleingreso.Text.Equals("") || textBox_ingresofnacalumno_panelingreso.Text.Equals(""))
+               textBox_ingresonombrealumno_panelingreso.Text.Equals("") || textBox_ingresorutalumno_panleingreso.Text.Equals("") || textBox_ingresofnacalumno_panelingreso.Text.Equals("") || textBox_ingresocurso_panelapoderado.Text.Equals(""))
                 {
                     MessageBox.Show("Rellene todos los campos");
                 }
@@ -466,7 +466,7 @@ namespace baseprueba
                 {
                     unaconexion.agregaapoderado(database, textBox_ingresodireccionapoderado.Text, textBox_ingresarnombreapoderado.Text, textBox_ingresotelefonoapoderdao.Text,
                     textBox_ingresofechadenacimientoapoderado.Text, textBox_ingresorutapoderado.Text,
-                    textBox_ingresonombrealumno_panelingreso.Text, textBox_ingresorutalumno_panleingreso.Text, textBox_ingresofnacalumno_panelingreso.Text);
+                    textBox_ingresonombrealumno_panelingreso.Text, textBox_ingresorutalumno_panleingreso.Text, textBox_ingresofnacalumno_panelingreso.Text, textBox_ingresocurso_panelapoderado.Text);
                     textBox_ingresodireccionapoderado.Text = "";
                     textBox_ingresarnombreapoderado.Text = "";
                     textBox_ingresotelefonoapoderdao.Text = "";
@@ -475,6 +475,7 @@ namespace baseprueba
                     textBox_ingresonombrealumno_panelingreso.Text = "";
                     textBox_ingresorutalumno_panleingreso.Text = "";
                     textBox_ingresofnacalumno_panelingreso.Text = "";
+                    textBox_ingresocurso_panelapoderado.Text = "";
                     MessageBox.Show("se ingreso correctamente");
                 }
 
@@ -490,24 +491,30 @@ namespace baseprueba
             if (unaconexion.exitenciaapoderado(database, textBox_rutap_alumnos.Text))
             {
                 if (textBox_fnacalumnos_panlealumnos.Text.Equals("")|| textBox_nombrealumno_panelalumnos.Text.Equals("") ||
-                        textBox_rutalumno_panelalumnos.Text.Equals("") || textBox_rutap_alumnos.Text.Equals(""))
+                        textBox_rutalumno_panelalumnos.Text.Equals("") || textBox_rutap_alumnos.Text.Equals("")|| textBox_ingresocurso_panleingresoalumnos.Text.Equals(""))
                 {
                     MessageBox.Show("Rellene todos los campos");
                 }
                 else
                 {
                     unaconexion.agrega_alumno(database, textBox_fnacalumnos_panlealumnos.Text, textBox_nombrealumno_panelalumnos.Text,
-                        textBox_rutalumno_panelalumnos.Text, textBox_rutap_alumnos.Text);
+                        textBox_rutalumno_panelalumnos.Text, textBox_rutap_alumnos.Text, textBox_ingresocurso_panleingresoalumnos.Text);
                     textBox_fnacalumnos_panlealumnos.Text = "";
                     textBox_nombrealumno_panelalumnos.Text = "";
                     textBox_rutalumno_panelalumnos.Text = "";
                     textBox_rutap_alumnos.Text = "";
+                    textBox_ingresocurso_panleingresoalumnos.Text = "";
                     MessageBox.Show("se ingreso correctamente");
                 }
 
             }
             else
             {
+                textBox_fnacalumnos_panlealumnos.Text = "";
+                textBox_nombrealumno_panelalumnos.Text = "";
+                textBox_rutalumno_panelalumnos.Text = "";
+                textBox_rutap_alumnos.Text = "";
+                textBox_ingresocurso_panleingresoalumnos.Text = "";
                 MessageBox.Show("No existe ese rut en los registros");
 
             }
@@ -525,6 +532,9 @@ namespace baseprueba
         //////////////---funciones para ver asistencia---/////////////////////
         private void button_verasistencia_Click(object sender, EventArgs e)
         {
+            
+            textBox_porcentaje_asistencia.Text = "";
+            textBox_Asitencia_Ver_asistencia.Text = "";
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
             if (unaconexion.existenciaasistencia(database, textBox_Nombre_Alumno_Ver_Asistencia.Text))
@@ -610,6 +620,7 @@ namespace baseprueba
 
         private void boton_veraanotaciones_panelveranotaciones_Click(object sender, EventArgs e)
         {
+            
             textBox_resultados_anotaciones.Text = "";
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
@@ -637,6 +648,8 @@ namespace baseprueba
 
         private void button_consultardatos_Click(object sender, EventArgs e)
         {
+           
+            textBox2.Text = "";
             conection unaconexion = new conection();
             IMongoDatabase database = unaconexion.conexion_Mongo();
             

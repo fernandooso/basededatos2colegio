@@ -24,10 +24,10 @@ namespace baseprueba.modelos
         }
         //---------------------------- metodo que agrega un apoderado -------------------------
         public void agregaapoderado(IMongoDatabase database, String direccion,
-            String nombre, String telefono, String fechanac, String rut, String nombrealumno, String rutalumno, String fnacal)
+            String nombre, String telefono, String fechanac, String rut, String nombrealumno, String rutalumno, String fnacal,String curso)
         {
             var apoderadodb = database.GetCollection<apoderado>("apoderado");
-            alumnotest[] alumnos = { new alumnotest(rutalumno, nombrealumno, fnacal) };
+            alumnotest[] alumnos = { new alumnotest(rutalumno, nombrealumno, fnacal,curso) };
             var apoderadoingreso = new apoderado(nombre, rut, telefono, direccion, fechanac, alumnos);
 
             apoderadodb.InsertOne(apoderadoingreso);
@@ -35,13 +35,14 @@ namespace baseprueba.modelos
         }
         //----------------metodo que agrega un alumno a un apoderado que tiene mas de un alumno
         public void agrega_alumno(IMongoDatabase database,String fnac,
-            String nomal, String rutal, String rutapoderado)
+            String nomal, String rutal, String rutapoderado,String curso)
         {
             var alumnop = new alumno()
             {
                 fecha_de_nacimiento = fnac,
                 nombre_alumno = nomal,
-                rut_alumno = rutal
+                rut_alumno = rutal,
+                curso = curso
             };
 
             BsonDocument documentillo = alumnop.ToBsonDocument();
@@ -339,7 +340,7 @@ namespace baseprueba.modelos
                 {
                     if (nombrealumno == alumno.datosalumno[cont].rut_alumno)
                     {
-                        datos = "Nombre alumno: " + alumno.datosalumno[cont].nombre_alumno + "\r\n" ;
+                        datos = "Nombre alumno: " + alumno.datosalumno[cont].nombre_alumno + "\r\n"+"Curso: "+ alumno.datosalumno[cont].curso;
                     }
                     cont++;
                 }

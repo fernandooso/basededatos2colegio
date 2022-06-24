@@ -11,6 +11,7 @@ namespace baseprueba.modelos
         public string rut_alumno { get; set; }
         public string nombre_alumno { set; get; }
         public string fecha_de_nacimiento { get; set; }
+        public string curso{ get; set; }
     }
-    //mala tu wea
+   
 }
